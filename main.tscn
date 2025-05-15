@@ -1,5 +1,19 @@
-[gd_scene format=3 uid="uid://eixniw5gwddg"]
+[gd_scene load_steps=3 format=3 uid="uid://eixniw5gwddg"]
+
+[ext_resource type="PackedScene" uid="uid://j7itnx6mse0y" path="res://Player.tscn" id="1_ig7tw"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ig7tw"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+
+[node name="CameraPivot" type="Marker3D" parent="Player"]
+
+[node name="Camera3D" type="Camera3D" parent="Player/CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.877171, 0.480178, 0, -0.480178, 0.877171, 0, 2.75177, 4.9344)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_ig7tw")
