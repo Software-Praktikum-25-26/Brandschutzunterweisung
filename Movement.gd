@@ -4,8 +4,8 @@ extends CharacterBody3D
 @export var speed = 14
 # The downward acceleration when in the air, in meters per second squared.
 @export var fall_acceleration = 75
-
-var target_velocity = Vector3.ZERO
+#Jump Power
+@export var jump_power = 24
 
 func _physics_process(delta):
 	# We create a local variable to store the input direction.
@@ -22,18 +22,20 @@ func _physics_process(delta):
 		direction.z += 1
 	if Input.is_action_pressed("move_forward"):
 		direction.z -= 1
+	if Input.is_action_pressed("jump"):
+		direction.y -= 10
 
 	direction = transform.basis * direction
 	# Ground Velocity
-	target_velocity.x = direction.x * speed
-	target_velocity.z = direction.z * speed
-
+	velocity.x = direction.x * speed
+	velocity.z = direction.z * speed
+	
+	print(velocity.y)
 	# Vertical Velocity
 	if not is_on_floor(): # If in the air, fall towards the floor. Literally gravity
-		target_velocity.y = target_velocity.y - (fall_acceleration * delta)
+		velocity.y = velocity.y - (fall_acceleration * delta)
 
 	# Moving the Character
-	velocity = target_velocity
 	move_and_slide()
 	
 @export var mouse_sensitivity := 0.003  # tweak this to taste
@@ -44,6 +46,9 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # hide and lock cursor
 
 func _unhandled_input(event):
+	if event.is_action_pressed("jump"):
+		if is_on_floor():
+			jump()
 	if event is InputEventMouseMotion:
 		rotate_player_view(event.relative)
 
@@ -56,3 +61,6 @@ func rotate_player_view(mouse_delta: Vector2):
 	pitch = clamp(pitch, deg_to_rad(-89), deg_to_rad(89))  # prevent flipping
 
 	$CameraPivot.rotation.x = pitch
+	
+func jump():
+	velocity.y = jump_power

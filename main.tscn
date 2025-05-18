@@ -11,7 +11,7 @@
 [node name="CameraPivot" type="Marker3D" parent="Player"]
 
 [node name="Camera3D" type="Camera3D" parent="Player/CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 0.877171, 0.480178, 0, -0.480178, 0.877171, 0, 2.75177, 4.9344)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.335)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
