@@ -29,8 +29,7 @@ func _physics_process(delta):
 	# Ground Velocity
 	velocity.x = direction.x * speed
 	velocity.z = direction.z * speed
-	
-	print(velocity.y)
+
 	# Vertical Velocity
 	if not is_on_floor(): # If in the air, fall towards the floor. Literally gravity
 		velocity.y = velocity.y - (fall_acceleration * delta)
@@ -51,6 +50,12 @@ func _unhandled_input(event):
 			jump()
 	if event is InputEventMouseMotion:
 		rotate_player_view(event.relative)
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			if event.button_index == MOUSE_BUTTON_WHEEL_UP and $SpringArm3D.spring_length < 20:
+				$SpringArm3D.spring_length += (event.factor if event.factor else 1.0)
+			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN and $SpringArm3D.spring_length >= 0:
+				$SpringArm3D.spring_length -= (event.factor if event.factor else 1.0)
 
 func rotate_player_view(mouse_delta: Vector2):
 	# Rotate horizontally (yaw)
@@ -58,9 +63,9 @@ func rotate_player_view(mouse_delta: Vector2):
 
 	# Rotate vertically (pitch)
 	pitch -= mouse_delta.y * mouse_sensitivity
-	pitch = clamp(pitch, deg_to_rad(-89), deg_to_rad(89))  # prevent flipping
+	pitch = clamp(pitch, deg_to_rad(-90), deg_to_rad(45))  # prevent flipping
 
-	$CameraPivot.rotation.x = pitch
+	$SpringArm3D.rotation.x = pitch
 	
 func jump():
 	velocity.y = jump_power

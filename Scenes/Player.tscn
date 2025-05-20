@@ -13,5 +13,5 @@ script = ExtResource("1_xhfnw")
 shape = SubResource("CapsuleShape3D_kpjcp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.59, 0, 0, 0, 0.37, 0, 0, 0, 0.865, 0, 0.408934, -0.429047)
+transform = Transform3D(0.59, 0, 0, 0, 0.37, 0, 0, 0, 0.0980902, 0, 0.408934, -0.429047)
 mesh = SubResource("BoxMesh_xhfnw")

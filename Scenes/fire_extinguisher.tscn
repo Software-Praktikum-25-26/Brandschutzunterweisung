@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c31l17jkx8ij5"]
+
+[ext_resource type="PackedScene" uid="uid://choavd7hmd2h" path="res://Assets/fire_extinguisher/model.gltf" id="1_sj7t7"]
+
+[node name="blockbench_export" instance=ExtResource("1_sj7t7")]

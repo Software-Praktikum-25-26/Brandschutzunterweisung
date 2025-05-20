@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://eixniw5gwddg"]
+[gd_scene load_steps=4 format=3 uid="uid://eixniw5gwddg"]
 
-[ext_resource type="PackedScene" uid="uid://j7itnx6mse0y" path="res://Player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://j7itnx6mse0y" path="res://Scenes/Player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://c31l17jkx8ij5" path="res://Scenes/fire_extinguisher.tscn" id="2_0xm2m"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ig7tw"]
 
@@ -8,12 +9,16 @@
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 
-[node name="CameraPivot" type="Marker3D" parent="Player"]
+[node name="SpringArm3D" type="SpringArm3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+spring_length = 4.0
 
-[node name="Camera3D" type="Camera3D" parent="Player/CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.335)
+[node name="Camera3D" type="Camera3D" parent="Player/SpringArm3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_ig7tw")
+
+[node name="blockbench_export" parent="." instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
