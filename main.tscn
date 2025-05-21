@@ -1,9 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://eixniw5gwddg"]
+[gd_scene load_steps=8 format=3 uid="uid://eixniw5gwddg"]
 
 [ext_resource type="PackedScene" uid="uid://j7itnx6mse0y" path="res://Scenes/Player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://c31l17jkx8ij5" path="res://Scenes/fire_extinguisher.tscn" id="2_0xm2m"]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0xm2m"]
+lifetime_randomness = 0.3
+direction = Vector3(0, 0, -1)
+spread = 10.0
+initial_velocity_min = 15.0
+initial_velocity_max = 25.0
+scale_min = 0.1
+scale_max = 0.5
+collision_mode = 1
+collision_friction = 1.0
+collision_bounce = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_0xm2m"]
+radial_segments = 4
+rings = 2
+
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ig7tw"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h2yge"]
+lifetime_randomness = 0.4
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+direction = Vector3(0, 1, 0)
+spread = 10.0
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+color = Color(0.862745, 0.0117647, 0.0431373, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_1bvp3"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -15,10 +43,29 @@ spring_length = 4.0
 
 [node name="Camera3D" type="Camera3D" parent="Player/SpringArm3D"]
 
+[node name="feuerloescher" parent="Player" instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.655, -0.56, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Player/feuerloescher"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0103834, 1.21744, -0.00327396)
+amount = 4000
+lifetime = 10.0
+process_material = SubResource("ParticleProcessMaterial_0xm2m")
+draw_pass_1 = SubResource("SphereMesh_0xm2m")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0294495, 0, 0.0115995)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_ig7tw")
 
-[node name="blockbench_export" parent="." instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 4, 9)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+size = Vector3(20, 2, 20)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+process_material = SubResource("ParticleProcessMaterial_h2yge")
+draw_pass_1 = SubResource("QuadMesh_1bvp3")
