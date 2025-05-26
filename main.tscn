@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://eixniw5gwddg"]
+[gd_scene load_steps=10 format=3 uid="uid://eixniw5gwddg"]
 
 [ext_resource type="PackedScene" uid="uid://j7itnx6mse0y" path="res://Scenes/Player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://c31l17jkx8ij5" path="res://Scenes/fire_extinguisher.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://cnfpdsmvjdvby" path="res://Scenes/fire_extinguisher.gd" id="3_h2yge"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0xm2m"]
 lifetime_randomness = 0.3
@@ -29,9 +30,12 @@ direction = Vector3(0, 1, 0)
 spread = 10.0
 initial_velocity_min = 10.0
 initial_velocity_max = 20.0
-color = Color(0.862745, 0.0117647, 0.0431373, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
+shading_mode = 0
 
 [sub_resource type="QuadMesh" id="QuadMesh_1bvp3"]
+material = SubResource("StandardMaterial3D_h2yge")
 
 [node name="Node3D" type="Node3D"]
 
@@ -45,11 +49,16 @@ spring_length = 4.0
 
 [node name="feuerloescher" parent="Player" instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.655, -0.56, 0)
+script = ExtResource("3_h2yge")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Player/feuerloescher"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0103834, 1.21744, -0.00327396)
+visible = false
 amount = 4000
+amount_ratio = 0.5
 lifetime = 10.0
+use_fixed_seed = true
+seed = 1
 process_material = SubResource("ParticleProcessMaterial_0xm2m")
 draw_pass_1 = SubResource("SphereMesh_0xm2m")
 
