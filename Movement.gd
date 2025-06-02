@@ -36,36 +36,12 @@ func _physics_process(delta):
 
 	# Moving the Character
 	move_and_slide()
-	
-@export var mouse_sensitivity := 0.003  # tweak this to taste
-
-var pitch := 0.0  # vertical camera angle
-
-func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # hide and lock cursor
 
 func _unhandled_input(event):
 	if event.is_action_pressed("jump"):
 		if is_on_floor():
 			jump()
-	if event is InputEventMouseMotion:
-		rotate_player_view(event.relative)
-	if event is InputEventMouseButton:
-		if event.is_pressed():
-			if event.button_index == MOUSE_BUTTON_WHEEL_UP and $SpringArm3D.spring_length < 20:
-				$SpringArm3D.spring_length += (event.factor if event.factor else 1.0)
-			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN and $SpringArm3D.spring_length >= 0:
-				$SpringArm3D.spring_length -= (event.factor if event.factor else 1.0)
 
-func rotate_player_view(mouse_delta: Vector2):
-	# Rotate horizontally (yaw)
-	rotate_y(-mouse_delta.x * mouse_sensitivity)
-
-	# Rotate vertically (pitch)
-	pitch -= mouse_delta.y * mouse_sensitivity
-	pitch = clamp(pitch, deg_to_rad(-90), deg_to_rad(45))  # prevent flipping
-
-	$SpringArm3D.rotation.x = pitch
 	
 func jump():
 	velocity.y = jump_power
