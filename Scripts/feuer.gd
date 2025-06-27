@@ -1,10 +1,10 @@
 extends Node3D
 
-@export var hp = 100
 
+@export var hp = 100
 @onready var fire_fx = $Feuer_Effekt
 @onready var smoke_fx = $Feuer_Effekt/Rauch_Effekt
-
+@onready var player: CharacterBody3D = $"../Player"
 
 
 func _ready():
@@ -12,10 +12,12 @@ func _ready():
 	fire_fx.process_material = fire_fx.process_material.duplicate()
 
 func extinguish(teil: Object):
-	print(name)
+	
 	if teil.name == "Basis":
+		print(name)
 		hp -= 1.0
 	elif teil.name == "Rest":
+		print(name)
 		hp -= 0.2
 	
 	if hp <= 1:
@@ -27,3 +29,9 @@ func extinguish(teil: Object):
 	fire_fx.process_material.scale_max = hp/100
 	fire_fx.process_material.initial_velocity_max = 5*hp/100
 	smoke_fx.position.y -= 0.01
+
+
+func _on_basis_body_entered(body3D) -> void:
+	if body3D is CharacterBody3D:
+		player._fire_damage()
+	print("you just entered into the fire, sir. why?")

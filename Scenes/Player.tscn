@@ -1,12 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://j7itnx6mse0y"]
 
-[ext_resource type="Script" uid="uid://dlko15trp65c" path="res://Movement.gd" id="1_xhfnw"]
+[ext_resource type="Script" uid="uid://dlko15trp65c" path="res://Scripts/player.gd" id="1_xhfnw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kpjcp"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rpqav"]
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_xhfnw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -14,3 +16,20 @@ shape = SubResource("CapsuleShape3D_kpjcp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_rpqav")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthBar" type="Label" parent="Control"]
+layout_mode = 1
+offset_left = 28.0
+offset_top = 19.0
+offset_right = 414.0
+offset_bottom = 76.0
+theme_override_font_sizes/font_size = 26
+text = "health bar txt example"
+
+[node name="Timer" type="Timer" parent="."]

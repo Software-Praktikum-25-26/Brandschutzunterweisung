@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpnjt86pwsf7v"]
+
+[ext_resource type="Script" uid="uid://kif032kjg1te" path="res://Scripts/ui.gd" id="1_jxero"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jxero")
+
+[node name="resume_btn" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -208.0
+offset_right = 150.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(-33, -65)
+text = "Resume
+"
+
+[node name="exit_btn" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -36.0
+offset_right = 150.0
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit
+
+"
+
+[connection signal="pressed" from="resume_btn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="exit_btn" to="." method="_on_exit_btn_pressed"]

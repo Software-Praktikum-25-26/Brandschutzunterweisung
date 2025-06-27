@@ -4,8 +4,11 @@ extends CharacterBody3D
 @export var speed = 14
 # The downward acceleration when in the air, in meters per second squared.
 @export var fall_acceleration = 75
-#Jump Power
 @export var jump_power = 24
+@onready var timer: Timer = $Timer
+@onready var menu: Control = $"../menu"
+@onready var health_bar: Label = $Control/HealthBar
+var hp = 100
 
 func _physics_process(delta):
 	# We create a local variable to store the input direction.
@@ -41,7 +44,46 @@ func _unhandled_input(event):
 	if event.is_action_pressed("jump"):
 		if is_on_floor():
 			jump()
+			
+func _ready() -> void:
+	_set_health_bar()
 
+# Handling player input
+func _input(event) -> void:
+	# checking what type of input we want to check,
+	# checking if key is pressed
+	# checking what key is pressed
+	if event is InputEventKey and event.is_pressed() and event.keycode == KEY_ESCAPE:
+		_stop_moving()
+		_show_menu()
+	
 	
 func jump():
 	velocity.y = jump_power
+
+func _show_menu():
+	menu.show()
+	
+func _stop_moving():
+	set_physics_process(false)
+func _start_moving():
+	set_physics_process(true)
+	
+func _set_health_bar():
+	health_bar.text = "Your Health is: " + str(hp)
+
+func _fire_damage():
+	hp = hp -25
+	if hp <= 0:
+		print("you are dead, sir. ")
+		health_bar.text = "Your Health is: " + str(hp)
+		_respawn()
+	else:
+		health_bar.text = "Your Health is: " + str(hp)
+
+func _respawn():
+	# wating for 1 sec
+	timer.start(1)
+	await timer.timeout
+	# reload the main scene
+	get_tree().reload_current_scene() 

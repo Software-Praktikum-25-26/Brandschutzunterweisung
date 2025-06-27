@@ -2,7 +2,7 @@
 
 [ext_resource type="Gradient" uid="uid://7hjf3e45idpm" path="res://Assets/Fire.tres" id="1_u0qxk"]
 [ext_resource type="Texture2D" uid="uid://bgrhusfp86bvv" path="res://Assets/Smoke30Frames_0.png" id="2_1834i"]
-[ext_resource type="Script" uid="uid://b4lbn4dk8qh0d" path="res://feuer.gd" id="3_jkyy1"]
+[ext_resource type="Script" uid="uid://b4lbn4dk8qh0d" path="res://Scripts/feuer.gd" id="3_jkyy1"]
 [ext_resource type="Gradient" path="res://Assets/SmokeGradient.tres" id="4_swvce"]
 [ext_resource type="Gradient" path="res://Assets/SparksGradient.tres" id="5_2t38f"]
 [ext_resource type="Texture2D" uid="uid://djv01avvyae00" path="res://Assets/Spark.png" id="6_ewd4b"]
@@ -166,7 +166,6 @@ size = Vector3(1.21159, 1.70575, 1.86057)
 script = ExtResource("3_jkyy1")
 
 [node name="Feuer_Effekt" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 amount = 200
 lifetime = 0.75
 randomness = 1.0
@@ -202,3 +201,6 @@ shape = SubResource("BoxShape3D_u0qxk")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15903, 0.00450146)
 shape = SubResource("BoxShape3D_4c57u")
+
+[connection signal="area_entered" from="Basis" to="." method="_on_basis_area_entered"]
+[connection signal="body_entered" from="Basis" to="." method="_on_basis_body_entered"]
