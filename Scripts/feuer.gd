@@ -5,6 +5,7 @@ extends Node3D
 @onready var fire_fx = $Feuer_Effekt
 @onready var smoke_fx = $Feuer_Effekt/Rauch_Effekt
 @onready var player: CharacterBody3D = $"../Player"
+var fire_damage = 10
 
 
 func _ready():
@@ -33,5 +34,5 @@ func extinguish(teil: Object):
 
 func _on_basis_body_entered(body3D) -> void:
 	if body3D is CharacterBody3D:
-		player._fire_damage()
-	print("you just entered into the fire, sir. why?")
+		print("you just entered into the fire, sir. why?")
+		player._damage(fire_damage)

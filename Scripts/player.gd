@@ -46,7 +46,7 @@ func _unhandled_input(event):
 			jump()
 			
 func _ready() -> void:
-	_set_health_bar()
+	_update_health_bar()
 
 # Handling player input
 func _input(event) -> void:
@@ -69,17 +69,17 @@ func _stop_moving():
 func _start_moving():
 	set_physics_process(true)
 	
-func _set_health_bar():
+func _update_health_bar():
 	health_bar.text = "Your Health is: " + str(hp)
 
-func _fire_damage():
-	hp = hp -25
+func _damage(damage:int):
+	hp = hp - damage
 	if hp <= 0:
+		hp = 0 # Falls hp kleiner als 0
+		_update_health_bar()
 		print("you are dead, sir. ")
-		health_bar.text = "Your Health is: " + str(hp)
 		_respawn()
-	else:
-		health_bar.text = "Your Health is: " + str(hp)
+	_update_health_bar()
 
 func _respawn():
 	# wating for 1 sec

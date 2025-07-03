@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://j7itnx6mse0y"]
+[gd_scene load_steps=6 format=3 uid="uid://j7itnx6mse0y"]
 
 [ext_resource type="Script" uid="uid://dlko15trp65c" path="res://Scripts/player.gd" id="1_xhfnw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kpjcp"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rpqav"]
+
+[sub_resource type="Skin" id="Skin_rpqav"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kyqiw"]
+albedo_color = Color(1, 0, 0, 1)
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 collision_layer = 3
@@ -16,6 +21,8 @@ shape = SubResource("CapsuleShape3D_kpjcp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_rpqav")
+skin = SubResource("Skin_rpqav")
+surface_material_override/0 = SubResource("StandardMaterial3D_kyqiw")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
