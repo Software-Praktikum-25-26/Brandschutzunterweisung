@@ -1,11 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://eixniw5gwddg"]
+[gd_scene load_steps=18 format=3 uid="uid://eixniw5gwddg"]
 
+[ext_resource type="Script" uid="uid://cjin4bmw672mh" path="res://Scripts/main.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://j7itnx6mse0y" path="res://Scenes/Player.tscn" id="1_kry3j"]
 [ext_resource type="Script" uid="uid://b4joy7mhwybur" path="res://Scripts/CameraLook.gd" id="2_21xkr"]
 [ext_resource type="PackedScene" uid="uid://c31l17jkx8ij5" path="res://Scenes/fire_extinguisher.tscn" id="3_6bp64"]
 [ext_resource type="Script" uid="uid://cnfpdsmvjdvby" path="res://Scripts/fire_extinguisher.gd" id="4_344ge"]
 [ext_resource type="PackedScene" uid="uid://bfreshbu2sd2y" path="res://Scenes/feuer.tscn" id="5_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://dpnjt86pwsf7v" path="res://Scenes/ui.tscn" id="6_21xkr"]
+[ext_resource type="Script" uid="uid://cinl2gqmdj4x0" path="res://Scripts/ground.gd" id="6_344ge"]
 
 [sub_resource type="Curve" id="Curve_4c57u"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.748408, 0.816902), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -36,6 +38,11 @@ material = SubResource("StandardMaterial3D_kek77")
 radial_segments = 4
 rings = 2
 
+[sub_resource type="Environment" id="Environment_h2yge"]
+glow_enabled = true
+glow_strength = 1.3
+glow_blend_mode = 0
+
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ig7tw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vw27"]
@@ -45,15 +52,13 @@ albedo_color = Color(0, 0.305882, 0.0745098, 1)
 material = SubResource("StandardMaterial3D_5vw27")
 size = Vector2(25, 25)
 
-[sub_resource type="Environment" id="Environment_h2yge"]
-glow_enabled = true
-glow_strength = 1.3
-glow_blend_mode = 0
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("score_label")]
+script = ExtResource("1_6bp64")
+score_label = NodePath("Score")
 
-[node name="Node3D" type="Node3D"]
-
-[node name="Player" parent="." instance=ExtResource("1_kry3j")]
+[node name="Player" parent="." node_paths=PackedStringArray("damage_flash") instance=ExtResource("1_kry3j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.29483, 9.64049)
+damage_flash = NodePath("../CanvasLayer/DamageFlash")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -85,15 +90,16 @@ target_position = Vector3(0, -0.4, -10)
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="Ground" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0294495, 0, 0.0115995)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
-shape = SubResource("WorldBoundaryShape3D_ig7tw")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
-mesh = SubResource("PlaneMesh_5vw27")
-skeleton = NodePath("../../Player/SpringArm3D")
+[node name="DamageFlash" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0.0117647, 1)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 4, 9)
@@ -105,8 +111,22 @@ size = Vector3(20, 2, 20)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_h2yge")
 
+[node name="Ground" type="StaticBody3D" parent="WorldEnvironment" groups=["flammable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0294495, 0, 0.0115995)
+script = ExtResource("6_344ge")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Ground"]
+shape = SubResource("WorldBoundaryShape3D_ig7tw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Ground"]
+mesh = SubResource("PlaneMesh_5vw27")
+skeleton = NodePath("../../../Player/SpringArm3D")
+
 [node name="Feuer" parent="." instance=ExtResource("5_ynf5e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00357902, 0)
 
 [node name="menu" parent="." instance=ExtResource("6_21xkr")]
-visible = false
+
+[node name="Score" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

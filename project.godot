@@ -10,10 +10,18 @@ config_version=5
 
 [application]
 
-config/name="Brandschutzunterweisung"
-run/main_scene="res://Scenes/main.tscn"
+config/name="Brandschutzunterweisung-master"
+run/main_scene="uid://eixniw5gwddg"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+ScoreManager="*res://Scripts/ScoreManager.gd"
+
+[editor]
+
+version_control/main_scene="res://Scenes/main.tscn"
 
 [input]
 

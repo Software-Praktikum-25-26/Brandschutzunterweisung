@@ -5,9 +5,12 @@ extends CharacterBody3D
 # The downward acceleration when in the air, in meters per second squared.
 @export var fall_acceleration = 75
 @export var jump_power = 24
+
 @onready var timer: Timer = $Timer
 @onready var menu: Control = $"../menu"
 @onready var health_bar: Label = $Control/HealthBar
+@export var damage_flash: ColorRect
+
 var hp = 100
 
 func _physics_process(delta):
@@ -25,6 +28,8 @@ func _physics_process(delta):
 		direction.z += 1
 	if Input.is_action_pressed("move_forward"):
 		direction.z -= 1
+
+	# This part for jump direction is not standard, but keeping it as is.
 	if Input.is_action_pressed("jump"):
 		direction.y -= 10
 
@@ -74,6 +79,10 @@ func _set_health_bar():
 
 func _fire_damage():
 	hp = hp -25
+	
+	# ADD THIS LINE: Call the damage effect function
+	_play_damage_effect()
+
 	if hp <= 0:
 		print("you are dead, sir. ")
 		health_bar.text = "Your Health is: " + str(hp)
@@ -86,4 +95,22 @@ func _respawn():
 	timer.start(1)
 	await timer.timeout
 	# reload the main scene
-	get_tree().reload_current_scene() 
+	get_tree().reload_current_scene()
+
+# ADD THIS ENTIRE FUNCTION: This creates the red flash animation
+func _play_damage_effect():
+	# First, check if the damage_flash node has been assigned in the editor
+	if damage_flash:
+		damage_flash.visible = true
+		var start_color = Color(1, 0, 0, 0.3) 
+		var end_color = Color(1, 0, 0, 0)   
+		damage_flash.modulate = start_color
+		
+		# Create a new tween directly in the code
+		var tween = create_tween()
+		
+		# Tell the tween to animate the 'modulate' property to fade out
+		tween.tween_property(damage_flash, "modulate", end_color, 0.4)
+	else:
+		# DEBUG STEP 3: If this message appears, the node is not linked in the Inspector.
+		print("ERROR: DamageFlash node not assigned in the Player script's Inspector!")
