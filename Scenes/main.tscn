@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://eixniw5gwddg"]
+[gd_scene load_steps=28 format=3 uid="uid://eixniw5gwddg"]
 
 [ext_resource type="PackedScene" uid="uid://j7itnx6mse0y" path="res://Scenes/Player.tscn" id="1_kry3j"]
 [ext_resource type="Script" uid="uid://b4joy7mhwybur" path="res://Scripts/CameraLook.gd" id="2_21xkr"]
@@ -17,6 +17,7 @@
 [ext_resource type="ArrayMesh" uid="uid://d0s8jfo1oqh68" path="res://Assets/environment/nature_kit/tree_detailed_dark.obj" id="13_b3802"]
 [ext_resource type="ArrayMesh" uid="uid://dgdkbpnpdgdtw" path="res://Assets/environment/nature_kit/tree_pineGroundB.obj" id="14_fevyy"]
 [ext_resource type="ArrayMesh" uid="uid://b24qac14a40iy" path="res://Assets/environment/nature_kit/grass_leafs.obj" id="15_h1bgf"]
+[ext_resource type="ArrayMesh" uid="uid://bvsms7o2w4fyt" path="res://Assets/environment/nature_kit/tree_detailed_fall.obj" id="16_b3802"]
 
 [sub_resource type="Curve" id="Curve_4c57u"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.748408, 0.816902), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -64,7 +65,7 @@ glow_blend_mode = 0
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_kry3j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.29483, 9.64049)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23457, 9.64049)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -119,16 +120,6 @@ size = Vector3(20, 2, 20)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_h2yge")
-
-[node name="Firetruck" type="MeshInstance3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.64067, 0, -7.31805)
-mesh = ExtResource("5_6bp64")
-skeleton = NodePath("../..")
-
-[node name="Firetruck2" type="MeshInstance3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.59201, 0, 1.59193)
-mesh = ExtResource("5_6bp64")
-skeleton = NodePath("../..")
 
 [node name="TreeOakDark" type="MeshInstance3D" parent="WorldEnvironment"]
 transform = Transform3D(3.83142, 0, 0, 0, 4.05391, 0, 0, 0, 4.49801, 10.114, -0.175427, -7.97514)
@@ -195,23 +186,8 @@ mesh = ExtResource("8_d1ilt")
 transform = Transform3D(7.22274, 0, 0, 0, 1, 0, 0, 0, 6.04094, -9.36487, 0, -9.27556)
 mesh = ExtResource("8_d1ilt")
 
-[node name="Firetruck3" type="MeshInstance3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2079, 0, -5.26607)
-mesh = ExtResource("5_6bp64")
-skeleton = NodePath("../..")
-
-[node name="Firetruck4" type="MeshInstance3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4487, 0, -0.555079)
-mesh = ExtResource("5_6bp64")
-skeleton = NodePath("../..")
-
-[node name="Firetruck5" type="MeshInstance3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.60394, 0, 6.32549)
-mesh = ExtResource("5_6bp64")
-skeleton = NodePath("../../Ground")
-
 [node name="Firetruck6" type="MeshInstance3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73002, -0.0339584, -2.91412)
+transform = Transform3D(1.5235, 0, 0, 0, 2.02576, 0, 0, 0, 2.01428, -8.73002, -0.0339584, -2.91412)
 mesh = ExtResource("5_6bp64")
 skeleton = NodePath("../../Ground")
 
@@ -297,6 +273,20 @@ mesh = ExtResource("8_d1ilt")
 [node name="GrassLarge12" type="MeshInstance3D" parent="WorldEnvironment"]
 transform = Transform3D(3.56277, 0, 0, 0, 1.06048, 0, 0, 0, 4.65191, 11.4987, 0, 8.97542)
 mesh = ExtResource("8_d1ilt")
+
+[node name="Firetruck7" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(1.5235, 0, 0, 0, 2.02576, 0, 0, 0, 2.01428, -8.5614, -0.0339584, 4.50655)
+mesh = ExtResource("5_6bp64")
+skeleton = NodePath("../../Ground")
+
+[node name="Firetruck8" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(1.5235, 0, 0, 0, 2.02576, 0, 0, 0, 2.01428, 9.47071, -0.0339584, -0.818623)
+mesh = ExtResource("5_6bp64")
+skeleton = NodePath("../../Ground")
+
+[node name="TreeDetailedFall" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(2.99314, 0, 1.57555, 0, 3.41754, 0, -3.09289, 0, 1.52474, 5.35704, 0, 10.1572)
+mesh = ExtResource("16_b3802")
 
 [node name="Feuer" parent="." instance=ExtResource("5_ynf5e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00357902, 0)
