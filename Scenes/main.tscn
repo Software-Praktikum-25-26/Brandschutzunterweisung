@@ -161,7 +161,7 @@ mesh = ExtResource("7_hptm8")
 skeleton = NodePath("../..")
 
 [node name="Building-d" type="MeshInstance3D" parent="WorldEnvironment"]
-transform = Transform3D(-12.4321, 0, -0.0154753, 0, 10.7515, 0, 0.101549, 0, -1.89457, -2.18272, -0.13214, -11.0916)
+transform = Transform3D(-12.3015, 0, -0.0353732, 0, 10.7515, 0, 0.100482, 0, -4.33058, -2.18272, -0.13214, -9.999)
 mesh = ExtResource("10_fdnlq")
 
 [node name="Tree2" type="MeshInstance3D" parent="WorldEnvironment"]

@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/main.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalAudioStreamPlayer="*res://Scenes/audio_stream_player.tscn"
+
 [input]
 
 move_forward={
