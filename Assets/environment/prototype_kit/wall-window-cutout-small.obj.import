@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ca643udw0yeyg"
+path="res://.godot/imported/wall-window-cutout-small.obj-a4174ceaef0fc626b500bb25c7f5d04d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-window-cutout-small.obj-a4174ceaef0fc626b500bb25c7f5d04d.mesh"]
+
+source_file="res://Assets/environment/prototype_kit/wall-window-cutout-small.obj"
+dest_files=["res://.godot/imported/wall-window-cutout-small.obj-a4174ceaef0fc626b500bb25c7f5d04d.mesh", "res://.godot/imported/wall-window-cutout-small.obj-a4174ceaef0fc626b500bb25c7f5d04d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

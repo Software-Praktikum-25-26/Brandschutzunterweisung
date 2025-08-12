@@ -1,11 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://eixniw5gwddg"]
+[gd_scene load_steps=22 format=3 uid="uid://eixniw5gwddg"]
 
 [ext_resource type="PackedScene" uid="uid://j7itnx6mse0y" path="res://Scenes/Player.tscn" id="1_kry3j"]
 [ext_resource type="Script" uid="uid://b4joy7mhwybur" path="res://Scripts/CameraLook.gd" id="2_21xkr"]
 [ext_resource type="PackedScene" uid="uid://c31l17jkx8ij5" path="res://Scenes/fire_extinguisher.tscn" id="3_6bp64"]
 [ext_resource type="Script" uid="uid://cnfpdsmvjdvby" path="res://Scripts/fire_extinguisher.gd" id="4_344ge"]
+[ext_resource type="ArrayMesh" uid="uid://b1imd3r5eug15" path="res://Assets/environment/car_kit/firetruck.obj" id="5_6bp64"]
 [ext_resource type="PackedScene" uid="uid://bfreshbu2sd2y" path="res://Scenes/feuer.tscn" id="5_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://dpnjt86pwsf7v" path="res://Scenes/ui.tscn" id="6_21xkr"]
+[ext_resource type="ArrayMesh" uid="uid://bsn8yoj0ygrgm" path="res://Assets/environment/nature_kit/tree_oak_dark.obj" id="6_344ge"]
+[ext_resource type="ArrayMesh" uid="uid://bdhyrhr2u3mmv" path="res://Assets/environment/nature_kit/grass.obj" id="7_hptm8"]
+[ext_resource type="ArrayMesh" uid="uid://cquoi1anjm7wb" path="res://Assets/environment/nature_kit/grass_large.obj" id="8_d1ilt"]
+[ext_resource type="ArrayMesh" uid="uid://rrnqprg4ebr6" path="res://Assets/environment/survival_kit/tree.obj" id="9_6iyac"]
+[ext_resource type="ArrayMesh" uid="uid://d2ppp8k84qcn7" path="res://Assets/environment/city_kit/building-d.obj" id="10_fdnlq"]
 
 [sub_resource type="Curve" id="Curve_4c57u"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.748408, 0.816902), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -95,6 +101,14 @@ shape = SubResource("WorldBoundaryShape3D_ig7tw")
 mesh = SubResource("PlaneMesh_5vw27")
 skeleton = NodePath("../../Player/SpringArm3D")
 
+[node name="Firetruck" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75947, -0.0339584, -2.92572)
+mesh = ExtResource("5_6bp64")
+
+[node name="Firetruck2" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.63339, 0, 6.31389)
+mesh = ExtResource("5_6bp64")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 4, 9)
 
@@ -104,6 +118,91 @@ size = Vector3(20, 2, 20)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_h2yge")
+
+[node name="Firetruck" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.64067, 0, -7.31805)
+mesh = ExtResource("5_6bp64")
+skeleton = NodePath("../..")
+
+[node name="Firetruck2" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.59201, 0, 1.59193)
+mesh = ExtResource("5_6bp64")
+skeleton = NodePath("../..")
+
+[node name="TreeOakDark" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(3.83142, 0, 0, 0, 4.05391, 0, 0, 0, 4.49801, 10.114, -0.175427, -7.97514)
+mesh = ExtResource("6_344ge")
+skeleton = NodePath("../..")
+
+[node name="TreeOakDark2" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(3.80422, 0, 0, 0, 4.31477, 0, 0, 0, 4.16478, 9.22156, 0.0791044, -11.1794)
+mesh = ExtResource("6_344ge")
+skeleton = NodePath("../..")
+
+[node name="Grass" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(6.95793, 0, 0, 0, 1.49416, 0, 0, 0, 6.23874, 6.88649, 0.0729399, -10.1868)
+mesh = ExtResource("7_hptm8")
+
+[node name="Grass2" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(4.65673, 0, 0, 0, 1, 0, 0, 0, 4.17541, 4.02427, 0, -11.4622)
+mesh = ExtResource("7_hptm8")
+
+[node name="Grass3" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(8.07468, 0, 0, 0, 1, 0, 0, 0, 7.86223, 10.3435, 0, -8.13575)
+mesh = ExtResource("7_hptm8")
+
+[node name="Grass4" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(8.13452, 0, 0, 0, 1.41028, 0, 0, 0, 12.3848, 7.24203, -0.0302305, -9.30429)
+mesh = ExtResource("7_hptm8")
+
+[node name="GrassLarge" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(7.22274, 0, 0, 0, 1, 0, 0, 0, 6.04094, 10.3175, 0, -5.34733)
+mesh = ExtResource("8_d1ilt")
+
+[node name="Tree" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(3.6514, 0, 0, 0, 4.15865, 0, 0, 0, 4.66051, 5.50917, 0, -10.7422)
+mesh = ExtResource("9_6iyac")
+
+[node name="Grass5" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(4.65673, 0, 0, 0, 1, 0, 0, 0, 4.17541, 4.2437, 0, -9.30429)
+mesh = ExtResource("7_hptm8")
+skeleton = NodePath("../..")
+
+[node name="Building-d" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(-12.4321, 0, -0.0154753, 0, 10.7515, 0, 0.101549, 0, -1.89457, -2.18272, -0.13214, -11.0916)
+mesh = ExtResource("10_fdnlq")
+
+[node name="Tree2" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(3.6514, 0, 0, 0, 4.15865, 0, 0, 0, 4.66051, -10.3688, 0.28865, -10.8814)
+mesh = ExtResource("9_6iyac")
+
+[node name="Grass6" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(4.65673, 0, 0, 0, 1, 0, 0, 0, 4.17541, -11.4195, 0, -11.2459)
+mesh = ExtResource("7_hptm8")
+skeleton = NodePath("../..")
+
+[node name="Grass7" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(4.65673, 0, 0, 0, 1, 0, 0, 0, 4.17541, -8.93509, 0, -11.2459)
+mesh = ExtResource("7_hptm8")
+skeleton = NodePath("../..")
+
+[node name="GrassLarge2" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(7.22274, 0, 0, 0, 1, 0, 0, 0, 6.04094, -10.7961, 0, -9.0062)
+mesh = ExtResource("8_d1ilt")
+
+[node name="GrassLarge3" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(7.22274, 0, 0, 0, 1, 0, 0, 0, 6.04094, -9.36487, 0, -9.27556)
+mesh = ExtResource("8_d1ilt")
+
+[node name="Firetruck3" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2079, 0, -5.26607)
+mesh = ExtResource("5_6bp64")
+skeleton = NodePath("../..")
+
+[node name="Firetruck4" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4487, 0, -0.555079)
+mesh = ExtResource("5_6bp64")
+skeleton = NodePath("../..")
 
 [node name="Feuer" parent="." instance=ExtResource("5_ynf5e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00357902, 0)

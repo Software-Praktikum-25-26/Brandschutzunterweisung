@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c22svt7d1brqf"
+path="res://.godot/imported/tool-hammer-upgraded.obj-f4134663b3c25968a6a5c6022ab0a4aa.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tool-hammer-upgraded.obj-f4134663b3c25968a6a5c6022ab0a4aa.mesh"]
+
+source_file="res://Assets/environment/survival_kit/tool-hammer-upgraded.obj"
+dest_files=["res://.godot/imported/tool-hammer-upgraded.obj-f4134663b3c25968a6a5c6022ab0a4aa.mesh", "res://.godot/imported/tool-hammer-upgraded.obj-f4134663b3c25968a6a5c6022ab0a4aa.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

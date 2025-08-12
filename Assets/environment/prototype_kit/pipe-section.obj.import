@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://crvoh76abt1qw"
+path="res://.godot/imported/pipe-section.obj-8a952eb5c29981fa7308abc94b5328fa.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pipe-section.obj-8a952eb5c29981fa7308abc94b5328fa.mesh"]
+
+source_file="res://Assets/environment/prototype_kit/pipe-section.obj"
+dest_files=["res://.godot/imported/pipe-section.obj-8a952eb5c29981fa7308abc94b5328fa.mesh", "res://.godot/imported/pipe-section.obj-8a952eb5c29981fa7308abc94b5328fa.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

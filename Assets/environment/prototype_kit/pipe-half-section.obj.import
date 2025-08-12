@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://6kj4xcnxq5fs"
+path="res://.godot/imported/pipe-half-section.obj-d01acc6b378f40d64711865007f9a2ca.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pipe-half-section.obj-d01acc6b378f40d64711865007f9a2ca.mesh"]
+
+source_file="res://Assets/environment/prototype_kit/pipe-half-section.obj"
+dest_files=["res://.godot/imported/pipe-half-section.obj-d01acc6b378f40d64711865007f9a2ca.mesh", "res://.godot/imported/pipe-half-section.obj-d01acc6b378f40d64711865007f9a2ca.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

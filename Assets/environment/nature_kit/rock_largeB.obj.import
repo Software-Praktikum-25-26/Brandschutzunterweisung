@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://vqcpi24tc6xo"
+path="res://.godot/imported/rock_largeB.obj-d1d5adca94bf7576c115da40e19929d1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/rock_largeB.obj-d1d5adca94bf7576c115da40e19929d1.mesh"]
+
+source_file="res://Assets/environment/nature_kit/rock_largeB.obj"
+dest_files=["res://.godot/imported/rock_largeB.obj-d1d5adca94bf7576c115da40e19929d1.mesh", "res://.godot/imported/rock_largeB.obj-d1d5adca94bf7576c115da40e19929d1.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b8l75yq5p3qv8"
+path="res://.godot/imported/path_stoneCorner.obj-c8891a6f610a5a0defcfa70f782bb975.mesh"
+
+[deps]
+
+files=["res://.godot/imported/path_stoneCorner.obj-c8891a6f610a5a0defcfa70f782bb975.mesh"]
+
+source_file="res://Assets/environment/nature_kit/path_stoneCorner.obj"
+dest_files=["res://.godot/imported/path_stoneCorner.obj-c8891a6f610a5a0defcfa70f782bb975.mesh", "res://.godot/imported/path_stoneCorner.obj-c8891a6f610a5a0defcfa70f782bb975.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

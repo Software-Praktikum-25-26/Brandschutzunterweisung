@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cnhjprs2dvd3q"
+path="res://.godot/imported/crop_pumpkin.obj-d85b4e5839b14b04f2e68c9a04102de1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/crop_pumpkin.obj-d85b4e5839b14b04f2e68c9a04102de1.mesh"]
+
+source_file="res://Assets/environment/nature_kit/crop_pumpkin.obj"
+dest_files=["res://.godot/imported/crop_pumpkin.obj-d85b4e5839b14b04f2e68c9a04102de1.mesh", "res://.godot/imported/crop_pumpkin.obj-d85b4e5839b14b04f2e68c9a04102de1.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cl1v6uryebrld"
+path="res://.godot/imported/floor-old.obj-5da53397911b33758abd1cb585810a34.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor-old.obj-5da53397911b33758abd1cb585810a34.mesh"]
+
+source_file="res://Assets/environment/survival_kit/floor-old.obj"
+dest_files=["res://.godot/imported/floor-old.obj-5da53397911b33758abd1cb585810a34.mesh", "res://.godot/imported/floor-old.obj-5da53397911b33758abd1cb585810a34.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

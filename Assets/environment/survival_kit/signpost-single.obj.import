@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cs2ocjj03e2l4"
+path="res://.godot/imported/signpost-single.obj-02ad6373f53bcc89e4ac134e6d8130ce.mesh"
+
+[deps]
+
+files=["res://.godot/imported/signpost-single.obj-02ad6373f53bcc89e4ac134e6d8130ce.mesh"]
+
+source_file="res://Assets/environment/survival_kit/signpost-single.obj"
+dest_files=["res://.godot/imported/signpost-single.obj-02ad6373f53bcc89e4ac134e6d8130ce.mesh", "res://.godot/imported/signpost-single.obj-02ad6373f53bcc89e4ac134e6d8130ce.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

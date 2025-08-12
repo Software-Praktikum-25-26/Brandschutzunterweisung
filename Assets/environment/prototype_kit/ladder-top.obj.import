@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://hpy1pd06b8sh"
+path="res://.godot/imported/ladder-top.obj-6b1bb442a41a702f83eb36029edb9804.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ladder-top.obj-6b1bb442a41a702f83eb36029edb9804.mesh"]
+
+source_file="res://Assets/environment/prototype_kit/ladder-top.obj"
+dest_files=["res://.godot/imported/ladder-top.obj-6b1bb442a41a702f83eb36029edb9804.mesh", "res://.godot/imported/ladder-top.obj-6b1bb442a41a702f83eb36029edb9804.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

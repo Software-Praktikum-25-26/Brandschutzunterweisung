@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dvmjyhnsi5dr2"
+path="res://.godot/imported/figurine.obj-c414560399fd95f721e230bcaadc89a9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/figurine.obj-c414560399fd95f721e230bcaadc89a9.mesh"]
+
+source_file="res://Assets/environment/prototype_kit/figurine.obj"
+dest_files=["res://.godot/imported/figurine.obj-c414560399fd95f721e230bcaadc89a9.mesh", "res://.godot/imported/figurine.obj-c414560399fd95f721e230bcaadc89a9.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bmx5wl8vwi41y"
+path="res://.godot/imported/cliff_halfCorner_stone.obj-528b7aa460c013b411ed8f46a8a8556b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cliff_halfCorner_stone.obj-528b7aa460c013b411ed8f46a8a8556b.mesh"]
+
+source_file="res://Assets/environment/nature_kit/cliff_halfCorner_stone.obj"
+dest_files=["res://.godot/imported/cliff_halfCorner_stone.obj-528b7aa460c013b411ed8f46a8a8556b.mesh", "res://.godot/imported/cliff_halfCorner_stone.obj-528b7aa460c013b411ed8f46a8a8556b.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

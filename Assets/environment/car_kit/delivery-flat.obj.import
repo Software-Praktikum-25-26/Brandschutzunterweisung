@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://3lcrphnuc8y0"
+path="res://.godot/imported/delivery-flat.obj-7d828782f8cb940aac26ae0dbc12b7d8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/delivery-flat.obj-7d828782f8cb940aac26ae0dbc12b7d8.mesh"]
+
+source_file="res://Assets/environment/car_kit/delivery-flat.obj"
+dest_files=["res://.godot/imported/delivery-flat.obj-7d828782f8cb940aac26ae0dbc12b7d8.mesh", "res://.godot/imported/delivery-flat.obj-7d828782f8cb940aac26ae0dbc12b7d8.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

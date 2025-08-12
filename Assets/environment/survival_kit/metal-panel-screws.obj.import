@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://coph34g6gq0yy"
+path="res://.godot/imported/metal-panel-screws.obj-45abe338d8067d672596cf48e0b7f8d1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/metal-panel-screws.obj-45abe338d8067d672596cf48e0b7f8d1.mesh"]
+
+source_file="res://Assets/environment/survival_kit/metal-panel-screws.obj"
+dest_files=["res://.godot/imported/metal-panel-screws.obj-45abe338d8067d672596cf48e0b7f8d1.mesh", "res://.godot/imported/metal-panel-screws.obj-45abe338d8067d672596cf48e0b7f8d1.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

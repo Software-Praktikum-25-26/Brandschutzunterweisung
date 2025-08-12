@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://m6xb27ji37vk"
+path="res://.godot/imported/stump_roundDetailed.obj-f0761f19a46763389a02bd7cb434ddb2.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stump_roundDetailed.obj-f0761f19a46763389a02bd7cb434ddb2.mesh"]
+
+source_file="res://Assets/environment/nature_kit/stump_roundDetailed.obj"
+dest_files=["res://.godot/imported/stump_roundDetailed.obj-f0761f19a46763389a02bd7cb434ddb2.mesh", "res://.godot/imported/stump_roundDetailed.obj-f0761f19a46763389a02bd7cb434ddb2.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

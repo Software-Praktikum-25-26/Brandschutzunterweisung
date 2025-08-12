@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bfaobybly0xv0"
+path="res://.godot/imported/floor-small-diagonal.obj-623877adc4883d76fee02116266bb85f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor-small-diagonal.obj-623877adc4883d76fee02116266bb85f.mesh"]
+
+source_file="res://Assets/environment/prototype_kit/floor-small-diagonal.obj"
+dest_files=["res://.godot/imported/floor-small-diagonal.obj-623877adc4883d76fee02116266bb85f.mesh", "res://.godot/imported/floor-small-diagonal.obj-623877adc4883d76fee02116266bb85f.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b31ty48hqg486"
+path="res://.godot/imported/detail-tank.obj-f00bf354c6bd1739c6ca0dc451614319.mesh"
+
+[deps]
+
+files=["res://.godot/imported/detail-tank.obj-f00bf354c6bd1739c6ca0dc451614319.mesh"]
+
+source_file="res://Assets/environment/city_kit/detail-tank.obj"
+dest_files=["res://.godot/imported/detail-tank.obj-f00bf354c6bd1739c6ca0dc451614319.mesh", "res://.godot/imported/detail-tank.obj-f00bf354c6bd1739c6ca0dc451614319.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

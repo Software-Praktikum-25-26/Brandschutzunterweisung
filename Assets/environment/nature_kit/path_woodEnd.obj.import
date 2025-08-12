@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dwlsr5javofa8"
+path="res://.godot/imported/path_woodEnd.obj-ef1722854423753ae8146595b00878ed.mesh"
+
+[deps]
+
+files=["res://.godot/imported/path_woodEnd.obj-ef1722854423753ae8146595b00878ed.mesh"]
+
+source_file="res://Assets/environment/nature_kit/path_woodEnd.obj"
+dest_files=["res://.godot/imported/path_woodEnd.obj-ef1722854423753ae8146595b00878ed.mesh", "res://.godot/imported/path_woodEnd.obj-ef1722854423753ae8146595b00878ed.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

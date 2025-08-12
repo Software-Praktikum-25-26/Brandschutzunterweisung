@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bff3hct5046r2"
+path="res://.godot/imported/metal-panel-screws-narrow.obj-7e09e6e825b1223c05916f56cdfba65e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/metal-panel-screws-narrow.obj-7e09e6e825b1223c05916f56cdfba65e.mesh"]
+
+source_file="res://Assets/environment/survival_kit/metal-panel-screws-narrow.obj"
+dest_files=["res://.godot/imported/metal-panel-screws-narrow.obj-7e09e6e825b1223c05916f56cdfba65e.mesh", "res://.godot/imported/metal-panel-screws-narrow.obj-7e09e6e825b1223c05916f56cdfba65e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

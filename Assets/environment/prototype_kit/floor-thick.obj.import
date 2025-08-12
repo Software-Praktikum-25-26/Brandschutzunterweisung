@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://m1qx51m8rnbk"
+path="res://.godot/imported/floor-thick.obj-9e6b24036b36026755896f12e944a05d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor-thick.obj-9e6b24036b36026755896f12e944a05d.mesh"]
+
+source_file="res://Assets/environment/prototype_kit/floor-thick.obj"
+dest_files=["res://.godot/imported/floor-thick.obj-9e6b24036b36026755896f12e944a05d.mesh", "res://.godot/imported/floor-thick.obj-9e6b24036b36026755896f12e944a05d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

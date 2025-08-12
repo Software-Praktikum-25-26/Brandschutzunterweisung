@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://crslofa853vk0"
+path="res://.godot/imported/tool-pickaxe.obj-642ca5a8a0e691f4f2eecc2c70d65b61.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tool-pickaxe.obj-642ca5a8a0e691f4f2eecc2c70d65b61.mesh"]
+
+source_file="res://Assets/environment/survival_kit/tool-pickaxe.obj"
+dest_files=["res://.godot/imported/tool-pickaxe.obj-642ca5a8a0e691f4f2eecc2c70d65b61.mesh", "res://.godot/imported/tool-pickaxe.obj-642ca5a8a0e691f4f2eecc2c70d65b61.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

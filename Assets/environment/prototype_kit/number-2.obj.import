@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dvetfaokhrbs7"
+path="res://.godot/imported/number-2.obj-0589899632b4831473f69f23a3f966dc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/number-2.obj-0589899632b4831473f69f23a3f966dc.mesh"]
+
+source_file="res://Assets/environment/prototype_kit/number-2.obj"
+dest_files=["res://.godot/imported/number-2.obj-0589899632b4831473f69f23a3f966dc.mesh", "res://.godot/imported/number-2.obj-0589899632b4831473f69f23a3f966dc.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
