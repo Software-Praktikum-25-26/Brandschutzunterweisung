@@ -101,14 +101,6 @@ shape = SubResource("WorldBoundaryShape3D_ig7tw")
 mesh = SubResource("PlaneMesh_5vw27")
 skeleton = NodePath("../../Player/SpringArm3D")
 
-[node name="Firetruck" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.75947, -0.0339584, -2.92572)
-mesh = ExtResource("5_6bp64")
-
-[node name="Firetruck2" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.63339, 0, 6.31389)
-mesh = ExtResource("5_6bp64")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 4, 9)
 
@@ -203,6 +195,16 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4487, 0, -0.555079)
 mesh = ExtResource("5_6bp64")
 skeleton = NodePath("../..")
+
+[node name="Firetruck5" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.60394, 0, 6.32549)
+mesh = ExtResource("5_6bp64")
+skeleton = NodePath("../../Ground")
+
+[node name="Firetruck6" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73002, -0.0339584, -2.91412)
+mesh = ExtResource("5_6bp64")
+skeleton = NodePath("../../Ground")
 
 [node name="Feuer" parent="." instance=ExtResource("5_ynf5e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00357902, 0)
