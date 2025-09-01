@@ -260,7 +260,7 @@ transform = Transform3D(4.14499, 0, 0, 0, 1, 0, 0, 0, 4.50448, 9.95646, 0, 8.884
 mesh = ExtResource("15_h1bgf")
 
 [node name="GrassLarge10" type="MeshInstance3D" parent="WorldEnvironment"]
-transform = Transform3D(3.14682, 0, 0, 0, 1.03792, 0, 0, 0, 4.09369, 11.6261, 1.0134, 9.7391)
+transform = Transform3D(3.14682, 0, 0, 0, 1.03792, 0, 0, 0, 4.09369, 11.6261, 0.0328833, 9.7391)
 mesh = ExtResource("8_d1ilt")
 
 [node name="GrassLeafs5" type="MeshInstance3D" parent="WorldEnvironment"]
