@@ -5,3 +5,4 @@
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 stream = ExtResource("1_px1li")
 volume_db = -13.0
+autoplay = true
