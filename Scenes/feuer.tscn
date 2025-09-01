@@ -202,5 +202,10 @@ shape = SubResource("BoxShape3D_u0qxk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15903, 0.00450146)
 shape = SubResource("BoxShape3D_4c57u")
 
+[node name="Spread_Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
 [connection signal="area_entered" from="Basis" to="." method="_on_basis_area_entered"]
 [connection signal="body_entered" from="Basis" to="." method="_on_basis_body_entered"]
+[connection signal="timeout" from="Spread_Timer" to="." method="_on_spread_timer_timeout"]

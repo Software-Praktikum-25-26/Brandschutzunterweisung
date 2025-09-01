@@ -5,6 +5,9 @@ extends CharacterBody3D
 # The downward acceleration when in the air, in meters per second squared.
 @export var fall_acceleration = 75
 @export var jump_power = 24
+# ADDED: This variable will hold your ColorRect node.
+@export var damage_flash: ColorRect
+
 @onready var timer: Timer = $Timer
 @onready var menu: Control = $"../menu"
 @onready var health_bar: Label = $Control/HealthBar
@@ -74,6 +77,9 @@ func _update_health_bar():
 
 func _damage(damage:int):
 	hp = hp - damage
+	# trigger damage flash.
+	_play_damage_effect()
+
 	if hp <= 0:
 		hp = 0 # Falls hp kleiner als 0
 		_update_health_bar()
@@ -86,4 +92,19 @@ func _respawn():
 	timer.start(1)
 	await timer.timeout
 	# reload the main scene
-	get_tree().reload_current_scene() 
+	get_tree().reload_current_scene()
+
+# Damage flash animation
+func _play_damage_effect():
+	if not damage_flash:
+		return
+
+	damage_flash.visible = true
+
+	# semi-transparent red color.
+	damage_flash.modulate = Color(1, 0, 0, 0.4)
+	
+	#  tween to animate the flash
+	var tween = create_tween()
+	# transparent over 0.5 seconds.
+	tween.tween_property(damage_flash, "modulate", Color(1, 0, 0, 0), 1.0)

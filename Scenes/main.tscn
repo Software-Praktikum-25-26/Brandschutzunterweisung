@@ -64,8 +64,9 @@ glow_blend_mode = 0
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Player" parent="." instance=ExtResource("1_kry3j")]
+[node name="Player" parent="." node_paths=PackedStringArray("damage_flash") instance=ExtResource("1_kry3j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23457, 9.64049)
+damage_flash = NodePath("../CanvasLayer/DamageFlash")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -293,3 +294,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00357902, 0)
 
 [node name="menu" parent="." instance=ExtResource("6_21xkr")]
 visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DamageFlash" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
