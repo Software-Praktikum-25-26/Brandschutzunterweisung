@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://eixniw5gwddg"]
+[gd_scene load_steps=40 format=3 uid="uid://eixniw5gwddg"]
 
 [ext_resource type="PackedScene" uid="uid://j7itnx6mse0y" path="res://Scenes/Player.tscn" id="1_kry3j"]
 [ext_resource type="Script" uid="uid://b4joy7mhwybur" path="res://Scripts/CameraLook.gd" id="2_21xkr"]
@@ -61,6 +61,42 @@ size = Vector2(25, 25)
 glow_enabled = true
 glow_strength = 1.3
 glow_blend_mode = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pdsj5"]
+size = Vector3(0.300659, 1.51746, 0.152161)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ee4r6"]
+size = Vector3(0.4375, 1.35352, 0.38414)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gt3je"]
+size = Vector3(0.204803, 1.3042, 0.224121)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3pmx8"]
+size = Vector3(0.866028, 1.74109, 1.26392)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u50mg"]
+size = Vector3(0.21875, 1, 0.210968)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b3802"]
+size = Vector3(2.67532, 2.03113, 3.19995)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cbgmd"]
+size = Vector3(0.213318, 1.33154, 0.185852)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1w6v2"]
+size = Vector3(0.15741, 1.18555, 0.168152)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ueoa1"]
+size = Vector3(0.320587, 0.521973, 0.528442)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fevyy"]
+size = Vector3(1.14801, 1.69434, 3.21289)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hibaj"]
+size = Vector3(1, 2.19922, 3.49683)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6vcvc"]
+size = Vector3(0.155029, 1.37708, 0.14209)
 
 [node name="Node3D" type="Node3D"]
 
@@ -127,10 +163,22 @@ transform = Transform3D(3.83142, 0, 0, 0, 4.05391, 0, 0, 0, 4.49801, 10.114, -0.
 mesh = ExtResource("6_344ge")
 skeleton = NodePath("../..")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/TreeOakDark"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/TreeOakDark/StaticBody3D"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 1.45563, 0.00189161, 0.258728, -0.00143993)
+shape = SubResource("BoxShape3D_pdsj5")
+
 [node name="TreeOakDark2" type="MeshInstance3D" parent="WorldEnvironment"]
 transform = Transform3D(3.80422, 0, 0, 0, 4.31477, 0, 0, 0, 4.16478, 9.22156, 0.0791044, -11.1794)
 mesh = ExtResource("6_344ge")
 skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/TreeOakDark2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/TreeOakDark2/StaticBody3D"]
+transform = Transform3D(1.00035, 0, 0, 0, 1.00038, 0, 0, 0, 1.00038, 0.00244212, 0.176758, 0.00364041)
+shape = SubResource("BoxShape3D_ee4r6")
 
 [node name="Grass" type="MeshInstance3D" parent="WorldEnvironment"]
 transform = Transform3D(6.95793, 0, 0, 0, 1.49416, 0, 0, 0, 6.23874, 6.88649, 0.0729399, -10.1868)
@@ -156,6 +204,12 @@ mesh = ExtResource("8_d1ilt")
 transform = Transform3D(3.6514, 0, 0, 0, 4.15865, 0, 0, 0, 4.66051, 5.50917, 0, -10.7422)
 mesh = ExtResource("9_6iyac")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Tree"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Tree/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000961304, 0.1521, 0.00756836)
+shape = SubResource("BoxShape3D_gt3je")
+
 [node name="Grass5" type="MeshInstance3D" parent="WorldEnvironment"]
 transform = Transform3D(4.65673, 0, 0, 0, 1, 0, 0, 0, 4.17541, 4.2437, 0, -9.30429)
 mesh = ExtResource("7_hptm8")
@@ -165,9 +219,21 @@ skeleton = NodePath("../..")
 transform = Transform3D(-12.3015, 0, -0.0353732, 0, 10.7515, 0, 0.100482, 0, -4.33058, -2.18272, -0.13214, -9.999)
 mesh = ExtResource("10_fdnlq")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Building-d"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Building-d/StaticBody3D"]
+transform = Transform3D(1, 0, -6.98492e-10, 0, 1, 0, 0, 0, 1, 0.0207214, 0.370544, 0.0142813)
+shape = SubResource("BoxShape3D_3pmx8")
+
 [node name="Tree2" type="MeshInstance3D" parent="WorldEnvironment"]
 transform = Transform3D(3.6514, 0, 0, 0, 4.15865, 0, 0, 0, 4.66051, -10.3688, 0.28865, -10.8814)
 mesh = ExtResource("9_6iyac")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Tree2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Tree2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00488281, 0, 0.00889683)
+shape = SubResource("BoxShape3D_u50mg")
 
 [node name="Grass6" type="MeshInstance3D" parent="WorldEnvironment"]
 transform = Transform3D(4.65673, 0, 0, 0, 1, 0, 0, 0, 4.17541, -11.4195, 0, -11.2459)
@@ -192,10 +258,22 @@ transform = Transform3D(1.5235, 0, 0, 0, 2.02576, 0, 0, 0, 2.01428, -8.73002, -0
 mesh = ExtResource("5_6bp64")
 skeleton = NodePath("../../Ground")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Firetruck6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Firetruck6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.00008, -0.723284, 0.515564, -0.061399)
+shape = SubResource("BoxShape3D_b3802")
+
 [node name="TreeOakDark3" type="MeshInstance3D" parent="WorldEnvironment"]
 transform = Transform3D(6.25039, 0, 0, 0, 5.38324, 0, 0, 0, 5.53086, 10.114, -0.175427, 10.899)
 mesh = ExtResource("6_344ge")
 skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/TreeOakDark3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/TreeOakDark3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0111185, 0.161003, -0.0235198)
+shape = SubResource("BoxShape3D_cbgmd")
 
 [node name="PlantBushTriangle" type="MeshInstance3D" parent="WorldEnvironment"]
 transform = Transform3D(3.04881, 0, 0, 0, 2.78025, 0, 0, 0, 2.39546, 11.1867, -0.00539339, 11.0541)
@@ -209,9 +287,21 @@ mesh = ExtResource("12_h1bgf")
 transform = Transform3D(4.35585, 0, 0, 0, 4.40155, 0, 0, 0, 4.39696, 8.5428, 0, 5.77023)
 mesh = ExtResource("13_b3802")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/TreeDetailedDark"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/TreeDetailedDark/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00149536, 0.0927734, 0.000884891)
+shape = SubResource("BoxShape3D_1w6v2")
+
 [node name="TreePineGroundB" type="MeshInstance3D" parent="WorldEnvironment"]
 transform = Transform3D(4.84076, 0, 0, 0, 6.41692, 0, 0, 0, 6.30451, -11.178, 0.00719869, 10.7962)
 mesh = ExtResource("14_fevyy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/TreePineGroundB"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/TreePineGroundB/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0693204, 0.239014, 0.0165404)
+shape = SubResource("BoxShape3D_ueoa1")
 
 [node name="GrassLarge4" type="MeshInstance3D" parent="WorldEnvironment"]
 transform = Transform3D(3.50859, 0, 0, 0, 1, 0, 0, 0, 5.03711, -9.05156, 0, 11.4073)
@@ -280,14 +370,32 @@ transform = Transform3D(1.5235, 0, 0, 0, 2.02576, 0, 0, 0, 2.01428, -8.5614, -0.
 mesh = ExtResource("5_6bp64")
 skeleton = NodePath("../../Ground")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Firetruck7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Firetruck7/StaticBody3D"]
+transform = Transform3D(1.21497, 0, 0, 0, 1.35818, 0, 0, 0, 1.00006, -0.0648484, 0.471516, 0.000977039)
+shape = SubResource("BoxShape3D_fevyy")
+
 [node name="Firetruck8" type="MeshInstance3D" parent="WorldEnvironment"]
 transform = Transform3D(1.5235, 0, 0, 0, 2.02576, 0, 0, 0, 2.01428, 9.47071, -0.0339584, -0.818623)
 mesh = ExtResource("5_6bp64")
 skeleton = NodePath("../../Ground")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Firetruck8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Firetruck8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.00002, 0, 0.59961, -0.07433)
+shape = SubResource("BoxShape3D_hibaj")
+
 [node name="TreeDetailedFall" type="MeshInstance3D" parent="WorldEnvironment"]
 transform = Transform3D(2.99314, 0, 1.57555, 0, 3.41754, 0, -3.09289, 0, 1.52474, 5.35704, 0, 10.1572)
 mesh = ExtResource("16_b3802")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/TreeDetailedFall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/TreeDetailedFall/StaticBody3D"]
+transform = Transform3D(1.0112, 0, -2.98023e-08, 0, 1.0112, 0, 1.19209e-07, 0, 1.0112, -0.0166702, 0.190711, -0.00222254)
+shape = SubResource("BoxShape3D_6vcvc")
 
 [node name="Feuer" parent="." instance=ExtResource("5_ynf5e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.004, 0)
