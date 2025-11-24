@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://eixniw5gwddg"]
+[gd_scene load_steps=29 format=3 uid="uid://eixniw5gwddg"]
 
 [ext_resource type="PackedScene" uid="uid://j7itnx6mse0y" path="res://Scenes/Player.tscn" id="1_kry3j"]
 [ext_resource type="Script" uid="uid://b4joy7mhwybur" path="res://Scripts/CameraLook.gd" id="2_21xkr"]
@@ -18,6 +18,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dgdkbpnpdgdtw" path="res://Assets/environment/nature_kit/tree_pineGroundB.obj" id="14_fevyy"]
 [ext_resource type="ArrayMesh" uid="uid://b24qac14a40iy" path="res://Assets/environment/nature_kit/grass_leafs.obj" id="15_h1bgf"]
 [ext_resource type="ArrayMesh" uid="uid://bvsms7o2w4fyt" path="res://Assets/environment/nature_kit/tree_detailed_fall.obj" id="16_b3802"]
+[ext_resource type="Script" uid="uid://l7vj8fpqg3qo" path="res://wind_gizmo.gd" id="19_fevyy"]
 
 [sub_resource type="Curve" id="Curve_4c57u"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.748408, 0.816902), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -305,3 +306,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0, 0, 1)
+
+[node name="WindManager" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+script = ExtResource("19_fevyy")
+wind_force = 26.91863
+wind_direction = Vector3(-0.8944392, 0.19760308, 0.40116268)

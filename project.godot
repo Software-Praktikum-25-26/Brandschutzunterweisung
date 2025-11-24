@@ -12,12 +12,20 @@ config_version=5
 
 config/name="Brandschutzunterweisung"
 run/main_scene="res://Scenes/main.tscn"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GlobalAudioStreamPlayer="*res://Scenes/audio_stream_player.tscn"
+
+[editor]
+
+movie_writer/movie_file="/home/serhat/Documents/Godot_Projects/brandschutzunterweisung/movies/CameraSpring.avi"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/wind_gizmo/plugin.cfg")
 
 [input]
 

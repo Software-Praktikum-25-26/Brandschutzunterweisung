@@ -28,7 +28,7 @@ initial_velocity_min = 4.5
 initial_velocity_max = 5.0
 angular_velocity_min = -1.60933e-05
 angular_velocity_max = 40.0
-gravity = Vector3(0, 0, 0)
+gravity = Vector3(0, -2, 0)
 linear_accel_min = -2.23517e-06
 linear_accel_max = 4.0
 radial_accel_min = -2.23517e-06
@@ -164,6 +164,8 @@ size = Vector3(1.21159, 1.70575, 1.86057)
 
 [node name="Feuer" type="Node3D"]
 script = ExtResource("3_jkyy1")
+spread_radius = 2.0
+max_area_slide_distance = 5.0
 
 [node name="Feuer_Effekt" type="GPUParticles3D" parent="."]
 amount = 200
