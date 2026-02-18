@@ -23,6 +23,7 @@ func _update_gizmo():
 
 # Get the wind direction in global space
 func get_global_wind_direction() -> Vector3:
+	print(wind_direction)
 	return global_transform.basis * wind_direction
 
 # Get wind force

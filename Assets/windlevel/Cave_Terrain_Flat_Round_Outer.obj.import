@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dv87mahthuyxa"
+path="res://.godot/imported/Cave_Terrain_Flat_Round_Outer.obj-2a8e0f214c211157de3803fe8f6a7b5d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Cave_Terrain_Flat_Round_Outer.obj-2a8e0f214c211157de3803fe8f6a7b5d.mesh"]
+
+source_file="res://Assets/windlevel/Cave_Terrain_Flat_Round_Outer.obj"
+dest_files=["res://.godot/imported/Cave_Terrain_Flat_Round_Outer.obj-2a8e0f214c211157de3803fe8f6a7b5d.mesh", "res://.godot/imported/Cave_Terrain_Flat_Round_Outer.obj-2a8e0f214c211157de3803fe8f6a7b5d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cc81w24wxwo2g"
+path="res://.godot/imported/Escarpment_Terrain_Corner_Outer_3x3_Top.obj-f478f22bcf00bd7b7c12b41a0f2c12d1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Escarpment_Terrain_Corner_Outer_3x3_Top.obj-f478f22bcf00bd7b7c12b41a0f2c12d1.mesh"]
+
+source_file="res://Assets/windlevel/Escarpment_Terrain_Corner_Outer_3x3_Top.obj"
+dest_files=["res://.godot/imported/Escarpment_Terrain_Corner_Outer_3x3_Top.obj-f478f22bcf00bd7b7c12b41a0f2c12d1.mesh", "res://.godot/imported/Escarpment_Terrain_Corner_Outer_3x3_Top.obj-f478f22bcf00bd7b7c12b41a0f2c12d1.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -78,7 +78,7 @@ func _update_health_bar():
 func _damage(damage:int):
 	hp = hp - damage
 	# trigger damage flash.
-	_play_damage_effect()
+	#_play_damage_effect()
 
 	if hp <= 0:
 		hp = 0 # Falls hp kleiner als 0

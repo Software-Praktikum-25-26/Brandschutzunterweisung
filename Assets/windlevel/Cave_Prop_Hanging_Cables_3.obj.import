@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dm804v8t8scng"
+path="res://.godot/imported/Cave_Prop_Hanging_Cables_3.obj-b4c980463f5d9117f0db510bd819f49f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Cave_Prop_Hanging_Cables_3.obj-b4c980463f5d9117f0db510bd819f49f.mesh"]
+
+source_file="res://Assets/windlevel/Cave_Prop_Hanging_Cables_3.obj"
+dest_files=["res://.godot/imported/Cave_Prop_Hanging_Cables_3.obj-b4c980463f5d9117f0db510bd819f49f.mesh", "res://.godot/imported/Cave_Prop_Hanging_Cables_3.obj-b4c980463f5d9117f0db510bd819f49f.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw15kxql4fde3"]
+
+[ext_resource type="Script" uid="uid://l7vj8fpqg3qo" path="res://wind_gizmo.gd" id="1_ncjnl"]
+
+[node name="WindManager" type="Node3D"]
+script = ExtResource("1_ncjnl")
+wind_force = 26.91863

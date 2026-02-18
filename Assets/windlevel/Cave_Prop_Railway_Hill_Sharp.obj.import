@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dfo4xbd26dt5"
+path="res://.godot/imported/Cave_Prop_Railway_Hill_Sharp.obj-ee43fb957537286e6298970cfb4c6c5a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Cave_Prop_Railway_Hill_Sharp.obj-ee43fb957537286e6298970cfb4c6c5a.mesh"]
+
+source_file="res://Assets/windlevel/Cave_Prop_Railway_Hill_Sharp.obj"
+dest_files=["res://.godot/imported/Cave_Prop_Railway_Hill_Sharp.obj-ee43fb957537286e6298970cfb4c6c5a.mesh", "res://.godot/imported/Cave_Prop_Railway_Hill_Sharp.obj-ee43fb957537286e6298970cfb4c6c5a.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

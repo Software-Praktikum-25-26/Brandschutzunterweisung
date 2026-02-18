@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://drso32di14u47"
+path="res://.godot/imported/Cliff_Terrain_Side_Top.obj-6433cbbe33457033adb6330044f28280.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Cliff_Terrain_Side_Top.obj-6433cbbe33457033adb6330044f28280.mesh"]
+
+source_file="res://Assets/windlevel/Cliff_Terrain_Side_Top.obj"
+dest_files=["res://.godot/imported/Cliff_Terrain_Side_Top.obj-6433cbbe33457033adb6330044f28280.mesh", "res://.godot/imported/Cliff_Terrain_Side_Top.obj-6433cbbe33457033adb6330044f28280.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

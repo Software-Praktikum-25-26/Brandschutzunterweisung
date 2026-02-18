@@ -24,7 +24,7 @@
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.748408, 0.816902), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_efxa6"]
+[sub_resource type="CurveTexture" id="CurveTexture_fevyy"]
 curve = SubResource("Curve_4c57u")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0xm2m"]
@@ -35,17 +35,17 @@ initial_velocity_min = 20.0
 initial_velocity_max = 40.0
 scale_min = 0.1
 scale_max = 0.5
-scale_curve = SubResource("CurveTexture_efxa6")
+scale_curve = SubResource("CurveTexture_fevyy")
 collision_mode = 1
 collision_friction = 1.0
 collision_bounce = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kek77"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hibaj"]
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.929715, 0.929715, 0.929715, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_0xm2m"]
-material = SubResource("StandardMaterial3D_kek77")
+material = SubResource("StandardMaterial3D_hibaj")
 radial_segments = 4
 rings = 2
 
@@ -310,5 +310,5 @@ color = Color(1, 0, 0, 1)
 [node name="WindManager" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 script = ExtResource("19_fevyy")
-wind_force = 26.91863
-wind_direction = Vector3(-0.8944392, 0.19760308, 0.40116268)
+wind_force = 60.9
+wind_direction = Vector3(0.9712014, -0.23774037, 0.015728213)

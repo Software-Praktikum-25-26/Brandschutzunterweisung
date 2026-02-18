@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://csuhh5gme2moc"
+path="res://.godot/imported/Hilly_Prop_Rock_2.obj-d3275f4dd3efe01f0909a9d412399ddb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Hilly_Prop_Rock_2.obj-d3275f4dd3efe01f0909a9d412399ddb.mesh"]
+
+source_file="res://Assets/windlevel/Hilly_Prop_Rock_2.obj"
+dest_files=["res://.godot/imported/Hilly_Prop_Rock_2.obj-d3275f4dd3efe01f0909a9d412399ddb.mesh", "res://.godot/imported/Hilly_Prop_Rock_2.obj-d3275f4dd3efe01f0909a9d412399ddb.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

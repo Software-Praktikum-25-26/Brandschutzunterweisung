@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dbd1su5jlnx42"
+path="res://.godot/imported/Hilly_Prop_Branch_2.obj-6bfb396704c0619d681b2762a9d2239e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Hilly_Prop_Branch_2.obj-6bfb396704c0619d681b2762a9d2239e.mesh"]
+
+source_file="res://Assets/windlevel/Hilly_Prop_Branch_2.obj"
+dest_files=["res://.godot/imported/Hilly_Prop_Branch_2.obj-6bfb396704c0619d681b2762a9d2239e.mesh", "res://.godot/imported/Hilly_Prop_Branch_2.obj-6bfb396704c0619d681b2762a9d2239e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

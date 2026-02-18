@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cs5u4c2bjij3w"
+path="res://.godot/imported/Cave_Prop_Stalagmite_Tiny.obj-6d51e3b11ba7d6f0acdfbfd1c880d50e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Cave_Prop_Stalagmite_Tiny.obj-6d51e3b11ba7d6f0acdfbfd1c880d50e.mesh"]
+
+source_file="res://Assets/windlevel/Cave_Prop_Stalagmite_Tiny.obj"
+dest_files=["res://.godot/imported/Cave_Prop_Stalagmite_Tiny.obj-6d51e3b11ba7d6f0acdfbfd1c880d50e.mesh", "res://.godot/imported/Cave_Prop_Stalagmite_Tiny.obj-6d51e3b11ba7d6f0acdfbfd1c880d50e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

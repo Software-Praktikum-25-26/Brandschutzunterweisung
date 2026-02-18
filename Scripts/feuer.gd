@@ -33,7 +33,7 @@ func _ready():
 	spread_timer.start()
 
 func _find_wind_gizmo():
-	# Look for a node with the wind_gizmo.gd script
+	# Look for a node with the wind_gizmo.gd script * wind_direction
 	var root = get_tree().root
 	for child in root.get_children():
 		wind_gizmo = _search_for_wind_gizmo(child)
@@ -64,7 +64,7 @@ func _process(_delta):
 func _apply_wind_effects():
 	var wind_dir = wind_gizmo.get_global_wind_direction()
 	var wind_force = wind_gizmo.get_wind_force()
-	
+
 	# Only apply wind if above threshold
 	if wind_force < wind_effect_threshold:
 		# Reset to original position if wind is too weak

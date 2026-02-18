@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bcol1iemjtd8i"
+path="res://.godot/imported/Hilly_Prop_Stump.obj-11ae718462807a45d1f9b49f26232f18.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Hilly_Prop_Stump.obj-11ae718462807a45d1f9b49f26232f18.mesh"]
+
+source_file="res://Assets/windlevel/Hilly_Prop_Stump.obj"
+dest_files=["res://.godot/imported/Hilly_Prop_Stump.obj-11ae718462807a45d1f9b49f26232f18.mesh", "res://.godot/imported/Hilly_Prop_Stump.obj-11ae718462807a45d1f9b49f26232f18.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

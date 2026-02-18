@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://buxwpldpxg650"
+path="res://.godot/imported/Cliff_Terrain_Corner_Outer_3x3_Mid.obj-e1507affe331a2c0f08ac7fcfe281edd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Cliff_Terrain_Corner_Outer_3x3_Mid.obj-e1507affe331a2c0f08ac7fcfe281edd.mesh"]
+
+source_file="res://Assets/windlevel/Cliff_Terrain_Corner_Outer_3x3_Mid.obj"
+dest_files=["res://.godot/imported/Cliff_Terrain_Corner_Outer_3x3_Mid.obj-e1507affe331a2c0f08ac7fcfe281edd.mesh", "res://.godot/imported/Cliff_Terrain_Corner_Outer_3x3_Mid.obj-e1507affe331a2c0f08ac7fcfe281edd.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
