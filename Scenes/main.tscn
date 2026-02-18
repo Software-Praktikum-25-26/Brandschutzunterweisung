@@ -291,7 +291,7 @@ transform = Transform3D(2.99314, 0, 1.57555, 0, 3.41754, 0, -3.09289, 0, 1.52474
 mesh = ExtResource("16_b3802")
 
 [node name="Feuer" parent="." instance=ExtResource("5_ynf5e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00357902, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.004, 0)
 
 [node name="menu" parent="." instance=ExtResource("6_21xkr")]
 visible = false
@@ -305,6 +305,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(1, 0, 0, 1)
 
 [node name="WindManager" type="Node3D" parent="."]

@@ -18,9 +18,8 @@ point_count = 3
 curve = SubResource("Curve_h2yge")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lquwl"]
-lifetime_randomness = 0.65
 emission_shape = 3
-emission_box_extents = Vector3(1.5, 0.09, 2.5)
+emission_box_extents = Vector3(0.47, 0.09, 1)
 angle_min = 1.07288e-05
 angle_max = 360.0
 direction = Vector3(0, 1, 0)
@@ -29,7 +28,7 @@ initial_velocity_min = 4.5
 initial_velocity_max = 5.0
 angular_velocity_min = -1.60933e-05
 angular_velocity_max = 40.0
-gravity = Vector3(0, -2, 0)
+gravity = Vector3(0, 0, 0)
 linear_accel_min = -2.23517e-06
 linear_accel_max = 4.0
 radial_accel_min = -2.23517e-06
@@ -165,13 +164,14 @@ size = Vector3(1.21159, 1.70575, 1.86057)
 
 [node name="Feuer" type="Node3D"]
 script = ExtResource("3_jkyy1")
-
-spread_radius = 2.0
-max_area_slide_distance = 5.0
-
+hp = null
+growth_speed = 0.5
+max_size = 25.0
+hp_regeneration_base = null
+max_particle_scale = null
 
 [node name="Feuer_Effekt" type="GPUParticles3D" parent="."]
-amount = 1000
+amount = 200
 lifetime = 0.75
 randomness = 1.0
 draw_order = 3
@@ -180,7 +180,7 @@ draw_pass_1 = SubResource("QuadMesh_272bh")
 
 [node name="Rauch_Effekt" type="GPUParticles3D" parent="Feuer_Effekt"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
-amount = 100
+amount = 40
 lifetime = 1.5
 randomness = 1.0
 draw_order = 3
@@ -188,7 +188,7 @@ process_material = SubResource("ParticleProcessMaterial_efxa6")
 draw_pass_1 = SubResource("QuadMesh_ycdy4")
 
 [node name="Funken_Effekt" type="GPUParticles3D" parent="Feuer_Effekt/Rauch_Effekt"]
-amount = 50
+amount = 20
 lifetime = 0.5
 randomness = 1.0
 draw_order = 3

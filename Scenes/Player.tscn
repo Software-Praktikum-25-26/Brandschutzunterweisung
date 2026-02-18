@@ -11,7 +11,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kyqiw"]
 albedo_color = Color(1, 0, 0, 1)
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="CharacterBody3D" type="CharacterBody3D" groups=["player"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_xhfnw")

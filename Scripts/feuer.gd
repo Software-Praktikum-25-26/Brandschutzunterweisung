@@ -1,5 +1,6 @@
 extends Node3D
 
+<<<<<<< HEAD
 @export var hp = 100
 @export var spread_radius: float = 7.0
 
@@ -31,6 +32,7 @@ func _ready():
 	_find_wind_gizmo()
 	
 	spread_timer.start()
+
 
 func _find_wind_gizmo():
 	# Look for a node with the wind_gizmo.gd script * wind_direction
@@ -115,8 +117,10 @@ func _reset_particle_velocity():
 		smoke_mat.initial_velocity_max = 2
 
 func extinguish(teil: Object):
-	spread_timer.start()
+	is_being_extinguished = true
+	extinguish_cooldown = 1.0 # Reset the cooldown timer.
 	
+<<<<<<< HEAD
 	if teil.name == "Basis":
 		print(name)
 		hp -= 1.0
@@ -135,10 +139,14 @@ func extinguish(teil: Object):
 	smoke_fx.position.y -= 0.01
 
 func _on_basis_body_entered(body3D) -> void:
+=======
+func _on_basis_body_entered(body3D):
+>>>>>>> main
 	if body3D is CharacterBody3D:
-		print("you just entered into the fire, sir. why?")
 		player._damage(fire_damage)
+		damage_timer.start()
 
+<<<<<<< HEAD
 func _on_spread_timer_timeout():
 	var fire_scene_resource = load(self.scene_file_path)
 	if not fire_scene_resource:
@@ -165,3 +173,11 @@ func _on_spread_timer_timeout():
 	new_fire.global_position = new_position
 	new_fire.add_to_group("fires")
 	spread_timer.start()
+=======
+func _on_basis_body_exited(body3D):
+	if body3D is CharacterBody3D:
+		damage_timer.stop()
+
+func _on_damage_timer_timeout():
+	player._damage(fire_damage)
+>>>>>>> main
