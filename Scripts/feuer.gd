@@ -1,6 +1,5 @@
 extends Node3D
 
-<<<<<<< HEAD
 @export var hp = 100
 @export var spread_radius: float = 7.0
 
@@ -14,11 +13,19 @@ extends Node3D
 @onready var smoke_fx = $Feuer_Effekt/Rauch_Effekt
 @onready var rest_area = $Rest  # Top area that will slide
 @onready var player: CharacterBody3D = $"../Player"
-@onready var spread_timer: Timer = $Spread_Timer
+@onready var spread_timer: Timer = $SpreadTimer
+
+@onready var _damage_timer: Timer = $DamageTimer
+
+var player_in_fire: bool = false
 
 var fire_damage = 10
 var wind_gizmo: Node3D = null
 var rest_area_original_position: Vector3
+
+var is_being_extinguished: bool = false
+var extinguish_cooldown: float = 0.0
+
 
 func _ready():
 	# Duplicate the shared material so it's unique to this instance
@@ -120,7 +127,6 @@ func extinguish(teil: Object):
 	is_being_extinguished = true
 	extinguish_cooldown = 1.0 # Reset the cooldown timer.
 	
-<<<<<<< HEAD
 	if teil.name == "Basis":
 		print(name)
 		hp -= 1.0
@@ -138,15 +144,28 @@ func extinguish(teil: Object):
 	# Note: initial_velocity is now controlled by wind in _process
 	smoke_fx.position.y -= 0.01
 
-func _on_basis_body_entered(body3D) -> void:
-=======
-func _on_basis_body_entered(body3D):
->>>>>>> main
-	if body3D is CharacterBody3D:
-		player._damage(fire_damage)
-		damage_timer.start()
+func _on_basis_body_entered(body) -> void:
+	if body is CharacterBody3D:
+		player_in_fire = true
+		_damage_player() # Deal first tick of damage immediately
+		_damage_timer.start()
 
-<<<<<<< HEAD
+func _on_basis_body_exited(body) -> void:
+	if body is CharacterBody3D:
+		player_in_fire = false
+		_damage_timer.stop()
+
+func _on_damage_timer_timeout() -> void:
+	if player_in_fire:
+		_damage_player()
+	else:
+		_damage_timer.stop()
+
+func _damage_player():
+	if player and player.has_method("_damage"):
+		player._damage(fire_damage)
+
+
 func _on_spread_timer_timeout():
 	var fire_scene_resource = load(self.scene_file_path)
 	if not fire_scene_resource:
@@ -173,11 +192,3 @@ func _on_spread_timer_timeout():
 	new_fire.global_position = new_position
 	new_fire.add_to_group("fires")
 	spread_timer.start()
-=======
-func _on_basis_body_exited(body3D):
-	if body3D is CharacterBody3D:
-		damage_timer.stop()
-
-func _on_damage_timer_timeout():
-	player._damage(fire_damage)
->>>>>>> main

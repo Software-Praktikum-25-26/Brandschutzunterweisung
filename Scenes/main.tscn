@@ -1,5 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://eixniw5gwddg"]
-
+[gd_scene format=3 uid="uid://eixniw5gwddg"]
 
 [ext_resource type="PackedScene" uid="uid://j7itnx6mse0y" path="res://Scenes/Player.tscn" id="1_kry3j"]
 [ext_resource type="Script" uid="uid://b4joy7mhwybur" path="res://Scripts/CameraLook.gd" id="2_21xkr"]
@@ -19,6 +18,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dgdkbpnpdgdtw" path="res://Assets/environment/nature_kit/tree_pineGroundB.obj" id="14_fevyy"]
 [ext_resource type="ArrayMesh" uid="uid://b24qac14a40iy" path="res://Assets/environment/nature_kit/grass_leafs.obj" id="15_h1bgf"]
 [ext_resource type="ArrayMesh" uid="uid://bvsms7o2w4fyt" path="res://Assets/environment/nature_kit/tree_detailed_fall.obj" id="16_b3802"]
+[ext_resource type="Script" uid="uid://dfga7fjnyhe2k" path="res://Scenes/reignition_fire.gd" id="18_hibaj"]
 [ext_resource type="Script" uid="uid://l7vj8fpqg3qo" path="res://wind_gizmo.gd" id="19_fevyy"]
 
 [sub_resource type="Curve" id="Curve_4c57u"]
@@ -100,25 +100,25 @@ size = Vector3(1, 2.19922, 3.49683)
 [sub_resource type="BoxShape3D" id="BoxShape3D_6vcvc"]
 size = Vector3(0.155029, 1.37708, 0.14209)
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node3D" unique_id=1015981810]
 
-[node name="Player" parent="." node_paths=PackedStringArray("damage_flash") instance=ExtResource("1_kry3j")]
+[node name="Player" parent="." unique_id=62871752 node_paths=PackedStringArray("damage_flash") instance=ExtResource("1_kry3j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23457, 9.64049)
 damage_flash = NodePath("../CanvasLayer/DamageFlash")
 
-[node name="SpringArm3D" type="SpringArm3D" parent="Player"]
+[node name="SpringArm3D" type="SpringArm3D" parent="Player" unique_id=64728820]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 spring_length = 0.0
 script = ExtResource("2_21xkr")
 
-[node name="Camera3D" type="Camera3D" parent="Player/SpringArm3D"]
+[node name="Camera3D" type="Camera3D" parent="Player/SpringArm3D" unique_id=754320260]
 transform = Transform3D(1, 2.98023e-08, 2.98023e-08, 2.98023e-08, 1, 1.49012e-08, 2.98023e-08, 1.49012e-08, 1, 0, 0, 0)
 
-[node name="feuerloescher" parent="Player/SpringArm3D/Camera3D" instance=ExtResource("3_6bp64")]
+[node name="feuerloescher" parent="Player/SpringArm3D/Camera3D" unique_id=970800443 instance=ExtResource("3_6bp64")]
 transform = Transform3D(1, 4.4409e-16, 0, 4.4409e-16, 1, 0, 0, 0, 1, 0.509413, -1.26844, -0.651163)
 script = ExtResource("4_344ge")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="Player/SpringArm3D/Camera3D/feuerloescher"]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Player/SpringArm3D/Camera3D/feuerloescher" unique_id=309705451]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0103834, 1.21744, -0.00327396)
 emitting = false
 amount = 4000
@@ -129,285 +129,285 @@ seed = 1
 process_material = SubResource("ParticleProcessMaterial_0xm2m")
 draw_pass_1 = SubResource("SphereMesh_0xm2m")
 
-[node name="RayCast3D" type="RayCast3D" parent="Player/SpringArm3D/Camera3D/feuerloescher"]
+[node name="RayCast3D" type="RayCast3D" parent="Player/SpringArm3D/Camera3D/feuerloescher" unique_id=673878433]
 transform = Transform3D(1, 4.4409e-16, 0, 4.4409e-16, 1, 0, 0, 0, 1, 5.96046e-08, 1.2244, 0)
 enabled = false
 target_position = Vector3(0, -0.4, -10)
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="Ground" type="StaticBody3D" parent="."]
+[node name="Ground" type="StaticBody3D" parent="." unique_id=702404872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0294495, 0, 0.0115995)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1455226545]
 shape = SubResource("WorldBoundaryShape3D_ig7tw")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1751267037]
 mesh = SubResource("PlaneMesh_5vw27")
 skeleton = NodePath("../../Player/SpringArm3D")
 
-[node name="GrassLarge" type="MeshInstance3D" parent="Ground"]
+[node name="GrassLarge" type="MeshInstance3D" parent="Ground" unique_id=1302494221]
 transform = Transform3D(5.52543, 0, 0, 0, 1, 0, 0, 0, 6.20554, 8.66822, 0, 7.59132)
 mesh = ExtResource("8_d1ilt")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=176695174]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 4, 9)
 
-[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="." unique_id=1422498165]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 size = Vector3(20, 2, 20)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1598016133]
 environment = SubResource("Environment_h2yge")
 
-[node name="TreeOakDark" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="TreeOakDark" type="MeshInstance3D" parent="WorldEnvironment" unique_id=961408230]
 transform = Transform3D(3.83142, 0, 0, 0, 4.05391, 0, 0, 0, 4.49801, 10.114, -0.175427, -7.97514)
 mesh = ExtResource("6_344ge")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/TreeOakDark"]
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/TreeOakDark" unique_id=1682062751]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/TreeOakDark/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/TreeOakDark/StaticBody3D" unique_id=1298108726]
 transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 1.45563, 0.00189161, 0.258728, -0.00143993)
 shape = SubResource("BoxShape3D_pdsj5")
 
-[node name="TreeOakDark2" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="TreeOakDark2" type="MeshInstance3D" parent="WorldEnvironment" unique_id=1011363038]
 transform = Transform3D(3.80422, 0, 0, 0, 4.31477, 0, 0, 0, 4.16478, 9.22156, 0.0791044, -11.1794)
 mesh = ExtResource("6_344ge")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/TreeOakDark2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/TreeOakDark2" unique_id=2084485199]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/TreeOakDark2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/TreeOakDark2/StaticBody3D" unique_id=1870144390]
 transform = Transform3D(1.00035, 0, 0, 0, 1.00038, 0, 0, 0, 1.00038, 0.00244212, 0.176758, 0.00364041)
 shape = SubResource("BoxShape3D_ee4r6")
 
-[node name="Grass" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="Grass" type="MeshInstance3D" parent="WorldEnvironment" unique_id=774027750]
 transform = Transform3D(6.95793, 0, 0, 0, 1.49416, 0, 0, 0, 6.23874, 6.88649, 0.0729399, -10.1868)
 mesh = ExtResource("7_hptm8")
 
-[node name="Grass2" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="Grass2" type="MeshInstance3D" parent="WorldEnvironment" unique_id=1233144400]
 transform = Transform3D(4.65673, 0, 0, 0, 1, 0, 0, 0, 4.17541, 4.02427, 0, -11.4622)
 mesh = ExtResource("7_hptm8")
 
-[node name="Grass3" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="Grass3" type="MeshInstance3D" parent="WorldEnvironment" unique_id=34738220]
 transform = Transform3D(8.07468, 0, 0, 0, 1, 0, 0, 0, 7.86223, 10.3435, 0, -8.13575)
 mesh = ExtResource("7_hptm8")
 
-[node name="Grass4" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="Grass4" type="MeshInstance3D" parent="WorldEnvironment" unique_id=899947699]
 transform = Transform3D(8.13452, 0, 0, 0, 1.41028, 0, 0, 0, 12.3848, 7.24203, -0.0302305, -9.30429)
 mesh = ExtResource("7_hptm8")
 
-[node name="GrassLarge" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="GrassLarge" type="MeshInstance3D" parent="WorldEnvironment" unique_id=339641122]
 transform = Transform3D(7.22274, 0, 0, 0, 1, 0, 0, 0, 6.04094, 10.3175, 0, -5.34733)
 mesh = ExtResource("8_d1ilt")
 
-[node name="Tree" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="Tree" type="MeshInstance3D" parent="WorldEnvironment" unique_id=770262652]
 transform = Transform3D(3.6514, 0, 0, 0, 4.15865, 0, 0, 0, 4.66051, 5.50917, 0, -10.7422)
 mesh = ExtResource("9_6iyac")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Tree"]
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Tree" unique_id=1076772706]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Tree/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Tree/StaticBody3D" unique_id=101078994]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000961304, 0.1521, 0.00756836)
 shape = SubResource("BoxShape3D_gt3je")
 
-[node name="Grass5" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="Grass5" type="MeshInstance3D" parent="WorldEnvironment" unique_id=761364004]
 transform = Transform3D(4.65673, 0, 0, 0, 1, 0, 0, 0, 4.17541, 4.2437, 0, -9.30429)
 mesh = ExtResource("7_hptm8")
 skeleton = NodePath("../..")
 
-[node name="Building-d" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="Building-d" type="MeshInstance3D" parent="WorldEnvironment" unique_id=1380203894]
 transform = Transform3D(-12.3015, 0, -0.0353732, 0, 10.7515, 0, 0.100482, 0, -4.33058, -2.18272, -0.13214, -9.999)
 mesh = ExtResource("10_fdnlq")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Building-d"]
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Building-d" unique_id=1753307542]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Building-d/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Building-d/StaticBody3D" unique_id=1143678548]
 transform = Transform3D(1, 0, -6.98492e-10, 0, 1, 0, 0, 0, 1, 0.0207214, 0.370544, 0.0142813)
 shape = SubResource("BoxShape3D_3pmx8")
 
-[node name="Tree2" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="Tree2" type="MeshInstance3D" parent="WorldEnvironment" unique_id=1967835666]
 transform = Transform3D(3.6514, 0, 0, 0, 4.15865, 0, 0, 0, 4.66051, -10.3688, 0.28865, -10.8814)
 mesh = ExtResource("9_6iyac")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Tree2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Tree2" unique_id=1398763436]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Tree2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Tree2/StaticBody3D" unique_id=1255412860]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00488281, 0, 0.00889683)
 shape = SubResource("BoxShape3D_u50mg")
 
-[node name="Grass6" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="Grass6" type="MeshInstance3D" parent="WorldEnvironment" unique_id=986457136]
 transform = Transform3D(4.65673, 0, 0, 0, 1, 0, 0, 0, 4.17541, -11.4195, 0, -11.2459)
 mesh = ExtResource("7_hptm8")
 skeleton = NodePath("../..")
 
-[node name="Grass7" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="Grass7" type="MeshInstance3D" parent="WorldEnvironment" unique_id=681936959]
 transform = Transform3D(4.65673, 0, 0, 0, 1, 0, 0, 0, 4.17541, -8.93509, 0, -11.2459)
 mesh = ExtResource("7_hptm8")
 skeleton = NodePath("../..")
 
-[node name="GrassLarge2" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="GrassLarge2" type="MeshInstance3D" parent="WorldEnvironment" unique_id=360133251]
 transform = Transform3D(7.22274, 0, 0, 0, 1, 0, 0, 0, 6.04094, -10.7961, 0, -9.0062)
 mesh = ExtResource("8_d1ilt")
 
-[node name="GrassLarge3" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="GrassLarge3" type="MeshInstance3D" parent="WorldEnvironment" unique_id=1788847346]
 transform = Transform3D(7.22274, 0, 0, 0, 1, 0, 0, 0, 6.04094, -9.36487, 0, -9.27556)
 mesh = ExtResource("8_d1ilt")
 
-[node name="Firetruck6" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="Firetruck6" type="MeshInstance3D" parent="WorldEnvironment" unique_id=2064223804]
 transform = Transform3D(1.5235, 0, 0, 0, 2.02576, 0, 0, 0, 2.01428, -8.73002, -0.0339584, -2.91412)
 mesh = ExtResource("5_6bp64")
 skeleton = NodePath("../../Ground")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Firetruck6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Firetruck6" unique_id=41491009]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Firetruck6/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Firetruck6/StaticBody3D" unique_id=57763768]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.00008, -0.723284, 0.515564, -0.061399)
 shape = SubResource("BoxShape3D_b3802")
 
-[node name="TreeOakDark3" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="TreeOakDark3" type="MeshInstance3D" parent="WorldEnvironment" unique_id=209545281]
 transform = Transform3D(6.25039, 0, 0, 0, 5.38324, 0, 0, 0, 5.53086, 10.114, -0.175427, 10.899)
 mesh = ExtResource("6_344ge")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/TreeOakDark3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/TreeOakDark3" unique_id=736533689]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/TreeOakDark3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/TreeOakDark3/StaticBody3D" unique_id=949176200]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0111185, 0.161003, -0.0235198)
 shape = SubResource("BoxShape3D_cbgmd")
 
-[node name="PlantBushTriangle" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="PlantBushTriangle" type="MeshInstance3D" parent="WorldEnvironment" unique_id=961582578]
 transform = Transform3D(3.04881, 0, 0, 0, 2.78025, 0, 0, 0, 2.39546, 11.1867, -0.00539339, 11.0541)
 mesh = ExtResource("11_k12tt")
 
-[node name="PlantFlatShort" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="PlantFlatShort" type="MeshInstance3D" parent="WorldEnvironment" unique_id=1545469537]
 transform = Transform3D(5.53238, 0.349147, 0, -0.387929, 4.9793, 0, 0, 0, 5.42686, 11.4077, 0, 7.43814)
 mesh = ExtResource("12_h1bgf")
 
-[node name="TreeDetailedDark" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="TreeDetailedDark" type="MeshInstance3D" parent="WorldEnvironment" unique_id=1824387611]
 transform = Transform3D(4.35585, 0, 0, 0, 4.40155, 0, 0, 0, 4.39696, 8.5428, 0, 5.77023)
 mesh = ExtResource("13_b3802")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/TreeDetailedDark"]
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/TreeDetailedDark" unique_id=1049120381]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/TreeDetailedDark/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/TreeDetailedDark/StaticBody3D" unique_id=583857289]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00149536, 0.0927734, 0.000884891)
 shape = SubResource("BoxShape3D_1w6v2")
 
-[node name="TreePineGroundB" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="TreePineGroundB" type="MeshInstance3D" parent="WorldEnvironment" unique_id=1976603308]
 transform = Transform3D(4.84076, 0, 0, 0, 6.41692, 0, 0, 0, 6.30451, -11.178, 0.00719869, 10.7962)
 mesh = ExtResource("14_fevyy")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/TreePineGroundB"]
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/TreePineGroundB" unique_id=356721575]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/TreePineGroundB/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/TreePineGroundB/StaticBody3D" unique_id=1024212174]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0693204, 0.239014, 0.0165404)
 shape = SubResource("BoxShape3D_ueoa1")
 
-[node name="GrassLarge4" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="GrassLarge4" type="MeshInstance3D" parent="WorldEnvironment" unique_id=555226164]
 transform = Transform3D(3.50859, 0, 0, 0, 1, 0, 0, 0, 5.03711, -9.05156, 0, 11.4073)
 mesh = ExtResource("8_d1ilt")
 skeleton = NodePath("../..")
 
-[node name="GrassLeafs" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="GrassLeafs" type="MeshInstance3D" parent="WorldEnvironment" unique_id=288677000]
 transform = Transform3D(4.08224, 0, 0, 0, 1, 0, 0, 0, 4.23454, -11.1243, 0, 8.1811)
 mesh = ExtResource("15_h1bgf")
 skeleton = NodePath("../..")
 
-[node name="GrassLarge5" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="GrassLarge5" type="MeshInstance3D" parent="WorldEnvironment" unique_id=1824196144]
 transform = Transform3D(3.8194, 0, 0, 0, 1, 0, 0, 0, 2.81252, -11.2559, 0, 7.06909)
 mesh = ExtResource("8_d1ilt")
 skeleton = NodePath("../..")
 
-[node name="GrassLarge6" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="GrassLarge6" type="MeshInstance3D" parent="WorldEnvironment" unique_id=970782393]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8101, 0, 8.46154)
 mesh = ExtResource("8_d1ilt")
 skeleton = NodePath("../..")
 
-[node name="GrassLarge7" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="GrassLarge7" type="MeshInstance3D" parent="WorldEnvironment" unique_id=375626143]
 transform = Transform3D(2.1757, 0, 0, 0, 1.99746, 0, 0, 0, 2.86983, -11.892, -2.38419e-07, 9.0724)
 mesh = ExtResource("8_d1ilt")
 skeleton = NodePath("../..")
 
-[node name="GrassLarge8" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="GrassLarge8" type="MeshInstance3D" parent="WorldEnvironment" unique_id=502355162]
 transform = Transform3D(2.10054, 0, 0, 0, 1.00006, 0, 0, 0, 2.21794, -11.9706, -2.38419e-07, 7.84556)
 mesh = ExtResource("8_d1ilt")
 skeleton = NodePath("../..")
 
-[node name="GrassLarge9" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="GrassLarge9" type="MeshInstance3D" parent="WorldEnvironment" unique_id=1207393138]
 transform = Transform3D(2.54347, 0, 0, 0, 1.98453, 0, 0, 0, 3.28921, -9.46325, 0, 9.64133)
 mesh = ExtResource("8_d1ilt")
 
-[node name="GrassLeafs2" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="GrassLeafs2" type="MeshInstance3D" parent="WorldEnvironment" unique_id=1838891150]
 transform = Transform3D(2.88102, 0, 0, 0, 2.88102, 0, 0, 0, 2.88102, -10.4788, 0, 8.82846)
 mesh = ExtResource("15_h1bgf")
 
-[node name="GrassLeafs3" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="GrassLeafs3" type="MeshInstance3D" parent="WorldEnvironment" unique_id=662841318]
 transform = Transform3D(2.55184, 0, 0, 0, 1, 0, 0, 0, 2.27489, -10.1491, 0, 11.9994)
 mesh = ExtResource("15_h1bgf")
 
-[node name="GrassLeafs4" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="GrassLeafs4" type="MeshInstance3D" parent="WorldEnvironment" unique_id=586361574]
 transform = Transform3D(4.14499, 0, 0, 0, 1, 0, 0, 0, 4.50448, 9.95646, 0, 8.88488)
 mesh = ExtResource("15_h1bgf")
 
-[node name="GrassLarge10" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="GrassLarge10" type="MeshInstance3D" parent="WorldEnvironment" unique_id=751122437]
 transform = Transform3D(3.14682, 0, 0, 0, 1.03792, 0, 0, 0, 4.09369, 11.6261, 0.0328833, 9.7391)
 mesh = ExtResource("8_d1ilt")
 
-[node name="GrassLeafs5" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="GrassLeafs5" type="MeshInstance3D" parent="WorldEnvironment" unique_id=2074079495]
 transform = Transform3D(4.59756, 0, 0, 0, 4.59756, 0, 0, 0, 4.59756, 11.9662, 0, 11.659)
 mesh = ExtResource("15_h1bgf")
 
-[node name="GrassLarge11" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="GrassLarge11" type="MeshInstance3D" parent="WorldEnvironment" unique_id=2068523587]
 transform = Transform3D(3.93712, 0, 0, 0, 1.85695, 0, 0, 0, 6.05461, 8.29875, 0, 11.0146)
 mesh = ExtResource("8_d1ilt")
 
-[node name="GrassLarge12" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="GrassLarge12" type="MeshInstance3D" parent="WorldEnvironment" unique_id=2016431465]
 transform = Transform3D(3.56277, 0, 0, 0, 1.06048, 0, 0, 0, 4.65191, 11.4987, 0, 8.97542)
 mesh = ExtResource("8_d1ilt")
 
-[node name="Firetruck7" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="Firetruck7" type="MeshInstance3D" parent="WorldEnvironment" unique_id=793067791]
 transform = Transform3D(1.5235, 0, 0, 0, 2.02576, 0, 0, 0, 2.01428, -8.5614, -0.0339584, 4.50655)
 mesh = ExtResource("5_6bp64")
 skeleton = NodePath("../../Ground")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Firetruck7"]
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Firetruck7" unique_id=1869905122]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Firetruck7/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Firetruck7/StaticBody3D" unique_id=441197871]
 transform = Transform3D(1.21497, 0, 0, 0, 1.35818, 0, 0, 0, 1.00006, -0.0648484, 0.471516, 0.000977039)
 shape = SubResource("BoxShape3D_fevyy")
 
-[node name="Firetruck8" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="Firetruck8" type="MeshInstance3D" parent="WorldEnvironment" unique_id=724848401]
 transform = Transform3D(1.5235, 0, 0, 0, 2.02576, 0, 0, 0, 2.01428, 9.47071, -0.0339584, -0.818623)
 mesh = ExtResource("5_6bp64")
 skeleton = NodePath("../../Ground")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Firetruck8"]
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Firetruck8" unique_id=1917982887]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Firetruck8/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Firetruck8/StaticBody3D" unique_id=1078013318]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.00002, 0, 0.59961, -0.07433)
 shape = SubResource("BoxShape3D_hibaj")
 
-[node name="TreeDetailedFall" type="MeshInstance3D" parent="WorldEnvironment"]
+[node name="TreeDetailedFall" type="MeshInstance3D" parent="WorldEnvironment" unique_id=843650775]
 transform = Transform3D(2.99314, 0, 1.57555, 0, 3.41754, 0, -3.09289, 0, 1.52474, 5.35704, 0, 10.1572)
 mesh = ExtResource("16_b3802")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/TreeDetailedFall"]
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/TreeDetailedFall" unique_id=684161955]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/TreeDetailedFall/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/TreeDetailedFall/StaticBody3D" unique_id=1405670889]
 transform = Transform3D(1.0112, 0, -2.98023e-08, 0, 1.0112, 0, 1.19209e-07, 0, 1.0112, -0.0166702, 0.190711, -0.00222254)
 shape = SubResource("BoxShape3D_6vcvc")
 
-[node name="Feuer" parent="." instance=ExtResource("5_ynf5e")]
+[node name="Feuer" parent="." unique_id=1615929724 instance=ExtResource("5_ynf5e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.004, 0)
+script = ExtResource("18_hibaj")
+spread_radius = 7.0
+max_area_slide_distance = 3.0
 
-[node name="menu" parent="." instance=ExtResource("6_21xkr")]
-visible = false
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=782983909]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="DamageFlash" type="ColorRect" parent="CanvasLayer"]
+[node name="DamageFlash" type="ColorRect" parent="CanvasLayer" unique_id=815101292]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -417,7 +417,10 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 0, 0, 1)
 
-[node name="WindManager" type="Node3D" parent="."]
+[node name="menu" parent="CanvasLayer" unique_id=986995719 instance=ExtResource("6_21xkr")]
+visible = false
+
+[node name="WindManager" type="Node3D" parent="." unique_id=717054568]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 script = ExtResource("19_fevyy")
 wind_force = 60.9

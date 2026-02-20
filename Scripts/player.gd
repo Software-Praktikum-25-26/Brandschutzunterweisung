@@ -6,7 +6,7 @@ extends CharacterBody3D
 @export var damage_flash: ColorRect
 
 @onready var timer: Timer = $Timer
-@onready var menu: Control = $"../menu"
+@onready var menu: Control = $"../CanvasLayer//menu"
 @onready var health_bar: Label = $Control/HealthBar
 var hp = 100
 

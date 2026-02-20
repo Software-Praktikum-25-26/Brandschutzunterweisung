@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bfreshbu2sd2y"]
+[gd_scene format=3 uid="uid://bfreshbu2sd2y"]
 
 [ext_resource type="Gradient" uid="uid://7hjf3e45idpm" path="res://Assets/Fire.tres" id="1_u0qxk"]
 [ext_resource type="Texture2D" uid="uid://bgrhusfp86bvv" path="res://Assets/Smoke30Frames_0.png" id="2_1834i"]
@@ -163,14 +163,12 @@ size = Vector3(1.14258, 0.298462, 1.86041)
 [sub_resource type="BoxShape3D" id="BoxShape3D_4c57u"]
 size = Vector3(1.21159, 1.70575, 1.86057)
 
-[node name="Feuer" type="Node3D"]
+[node name="Feuer" type="Node3D" unique_id=1451664004]
 script = ExtResource("3_jkyy1")
-
 spread_radius = 2.0
 max_area_slide_distance = 5.0
 
-
-[node name="Feuer_Effekt" type="GPUParticles3D" parent="."]
+[node name="Feuer_Effekt" type="GPUParticles3D" parent="." unique_id=1041959254]
 amount = 1000
 lifetime = 0.75
 randomness = 1.0
@@ -178,7 +176,7 @@ draw_order = 3
 process_material = SubResource("ParticleProcessMaterial_lquwl")
 draw_pass_1 = SubResource("QuadMesh_272bh")
 
-[node name="Rauch_Effekt" type="GPUParticles3D" parent="Feuer_Effekt"]
+[node name="Rauch_Effekt" type="GPUParticles3D" parent="Feuer_Effekt" unique_id=112728990]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 amount = 100
 lifetime = 1.5
@@ -187,7 +185,7 @@ draw_order = 3
 process_material = SubResource("ParticleProcessMaterial_efxa6")
 draw_pass_1 = SubResource("QuadMesh_ycdy4")
 
-[node name="Funken_Effekt" type="GPUParticles3D" parent="Feuer_Effekt/Rauch_Effekt"]
+[node name="Funken_Effekt" type="GPUParticles3D" parent="Feuer_Effekt/Rauch_Effekt" unique_id=22310367]
 amount = 50
 lifetime = 0.5
 randomness = 1.0
@@ -195,19 +193,21 @@ draw_order = 3
 process_material = SubResource("ParticleProcessMaterial_ycdy4")
 draw_pass_1 = SubResource("QuadMesh_vivmo")
 
-[node name="Basis" type="Area3D" parent="."]
+[node name="Basis" type="Area3D" parent="." unique_id=993358874]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Basis"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Basis" unique_id=85143620]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00292969, 0.151672, 0.00448608)
 shape = SubResource("BoxShape3D_u0qxk")
 
-[node name="Rest" type="Area3D" parent="."]
+[node name="Rest" type="Area3D" parent="." unique_id=418520083]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rest"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rest" unique_id=1238402667]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15903, 0.00450146)
 shape = SubResource("BoxShape3D_4c57u")
 
-[node name="DamageTimer" type="Timer" parent="."]
+[node name="DamageTimer" type="Timer" parent="." unique_id=190094008]
+
+[node name="SpreadTimer" type="Timer" parent="." unique_id=1384389696]
 
 [connection signal="area_entered" from="Basis" to="." method="_on_basis_area_entered"]
 [connection signal="body_entered" from="Basis" to="." method="_on_basis_body_entered"]
